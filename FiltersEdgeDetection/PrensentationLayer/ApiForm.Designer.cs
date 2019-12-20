@@ -33,38 +33,22 @@ namespace FiltersEdgeDetection.PrensentationLayer
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelApiUrlPost = new System.Windows.Forms.Label();
             this.labelApiUrlGet = new System.Windows.Forms.Label();
-            this.textBoxApiGetUrl = new System.Windows.Forms.TextBox();
             this.textBoxApiPostUrl = new System.Windows.Forms.TextBox();
             this.buttonApiBack = new System.Windows.Forms.Button();
             this.buttonApiGetPost = new System.Windows.Forms.Button();
+            this.textBoxApiGetUrl = new System.Windows.Forms.TextBox();
+            this.labelApiUrlPost = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // labelApiUrlPost
-            // 
-            this.labelApiUrlPost.Location = new System.Drawing.Point(12, 37);
-            this.labelApiUrlPost.Name = "labelApiUrlPost";
-            this.labelApiUrlPost.Size = new System.Drawing.Size(112, 23);
-            this.labelApiUrlPost.TabIndex = 1;
-            this.labelApiUrlPost.Text = "API POST URL";
-            this.labelApiUrlPost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelApiUrlGet
             // 
-            this.labelApiUrlGet.Location = new System.Drawing.Point(23, 37);
+            this.labelApiUrlGet.Location = new System.Drawing.Point(12, 32);
             this.labelApiUrlGet.Name = "labelApiUrlGet";
-            this.labelApiUrlGet.Size = new System.Drawing.Size(101, 17);
+            this.labelApiUrlGet.Size = new System.Drawing.Size(123, 32);
             this.labelApiUrlGet.TabIndex = 1;
-            this.labelApiUrlGet.Text = "API GET URL";
+            this.labelApiUrlGet.Text = "imgur image hash";
             this.labelApiUrlGet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBoxApiGetUrl
-            // 
-            this.textBoxApiGetUrl.Location = new System.Drawing.Point(152, 37);
-            this.textBoxApiGetUrl.Name = "textBoxApiGetUrl";
-            this.textBoxApiGetUrl.Size = new System.Drawing.Size(262, 22);
-            this.textBoxApiGetUrl.TabIndex = 2;
             // 
             // textBoxApiPostUrl
             // 
@@ -93,6 +77,22 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.buttonApiGetPost.UseVisualStyleBackColor = true;
             this.buttonApiGetPost.Click += new System.EventHandler(this.buttonGetPost_Click);
             // 
+            // textBoxApiGetUrl
+            // 
+            this.textBoxApiGetUrl.Location = new System.Drawing.Point(152, 37);
+            this.textBoxApiGetUrl.Name = "textBoxApiGetUrl";
+            this.textBoxApiGetUrl.Size = new System.Drawing.Size(262, 22);
+            this.textBoxApiGetUrl.TabIndex = 2;
+            // 
+            // labelApiUrlPost
+            // 
+            this.labelApiUrlPost.Location = new System.Drawing.Point(12, 37);
+            this.labelApiUrlPost.Name = "labelApiUrlPost";
+            this.labelApiUrlPost.Size = new System.Drawing.Size(112, 23);
+            this.labelApiUrlPost.TabIndex = 1;
+            this.labelApiUrlPost.Text = "API POST URL";
+            this.labelApiUrlPost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // ApiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -113,11 +113,11 @@ namespace FiltersEdgeDetection.PrensentationLayer
         }
 
         #endregion
-        private System.Windows.Forms.Label labelApiUrlPost;
         private System.Windows.Forms.Label labelApiUrlGet;
-        private System.Windows.Forms.TextBox textBoxApiGetUrl;
         private System.Windows.Forms.TextBox textBoxApiPostUrl;
         private System.Windows.Forms.Button buttonApiBack;
         private System.Windows.Forms.Button buttonApiGetPost;
+        private System.Windows.Forms.TextBox textBoxApiGetUrl;
+        private System.Windows.Forms.Label labelApiUrlPost;
     }
 }

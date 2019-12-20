@@ -123,11 +123,11 @@
             // radioButtonAPI
             // 
             this.radioButtonAPI.AutoSize = true;
-            this.radioButtonAPI.Location = new System.Drawing.Point(580, 35);
+            this.radioButtonAPI.Location = new System.Drawing.Point(567, 35);
             this.radioButtonAPI.Name = "radioButtonAPI";
-            this.radioButtonAPI.Size = new System.Drawing.Size(50, 21);
+            this.radioButtonAPI.Size = new System.Drawing.Size(89, 21);
             this.radioButtonAPI.TabIndex = 7;
-            this.radioButtonAPI.Text = "API";
+            this.radioButtonAPI.Text = "imgur API";
             this.radioButtonAPI.UseVisualStyleBackColor = true;
             this.radioButtonAPI.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
@@ -135,7 +135,7 @@
             // 
             this.radioButtonLocal.AutoSize = true;
             this.radioButtonLocal.Checked = true;
-            this.radioButtonLocal.Location = new System.Drawing.Point(580, 62);
+            this.radioButtonLocal.Location = new System.Drawing.Point(567, 57);
             this.radioButtonLocal.Name = "radioButtonLocal";
             this.radioButtonLocal.Size = new System.Drawing.Size(63, 21);
             this.radioButtonLocal.TabIndex = 7;
@@ -147,7 +147,7 @@
             // labelMode
             // 
             this.labelMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMode.Location = new System.Drawing.Point(494, 35);
+            this.labelMode.Location = new System.Drawing.Point(469, 35);
             this.labelMode.Name = "labelMode";
             this.labelMode.Size = new System.Drawing.Size(80, 43);
             this.labelMode.TabIndex = 8;
@@ -160,7 +160,7 @@
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.Location = new System.Drawing.Point(81, 30);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(343, 50);
+            this.title.Size = new System.Drawing.Size(292, 50);
             this.title.TabIndex = 1;
             this.title.Text = "Image manipulation V1.0";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

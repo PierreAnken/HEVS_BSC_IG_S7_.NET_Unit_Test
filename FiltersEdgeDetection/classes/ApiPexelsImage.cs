@@ -4,18 +4,27 @@ using System.IO;
 
 namespace FiltersEdgeDetection.classes
 {
-    class ApiPExelsImage : IImageManager
+    class ApiImgurImage : IImageManager
     {
-        public Bitmap LoadImage(string path)
+        private static readonly string CLIENTID = "ec26fa431d0e2b9";
+        private static readonly string APIBASEURL = "https://api.imgur.com/3/";
+        private readonly string imageHash;
+        
+        public ApiImgurImage(string imageHash)
         {
-            StreamReader streamReader = new StreamReader(path);
-            Bitmap  originalBitmap = (Bitmap)Image.FromStream(streamReader.BaseStream);
-            streamReader.Close(); 
-
-            return originalBitmap;
+            this.imageHash = imageHash;
         }
 
-        public void SaveImage(string path, Bitmap img)
+        public Bitmap LoadImage()
+        {
+            Bitmap bitmap = null;
+            string apiUrl = APIBASEURL + "image/" + imageHash;
+
+
+            return bitmap;
+        }
+
+        public void SaveImage(Bitmap img)
         {
 
         }
