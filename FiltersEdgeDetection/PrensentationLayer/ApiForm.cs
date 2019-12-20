@@ -56,8 +56,8 @@ namespace FiltersEdgeDetection.PrensentationLayer
                 Bitmap image = apiImgurImage.LoadImage();
 
                 if (image != null) {
-                    Bitmap imagePreview = ExtBitmap.AdaptToSquareCanvas(image, parentForm.getImagePreview().Width);
-                    parentForm.getImagePreview().Image = imagePreview;
+                    parentForm.SetOriginalBitmap(image);
+                    Dispose();
                 }
             }
         }

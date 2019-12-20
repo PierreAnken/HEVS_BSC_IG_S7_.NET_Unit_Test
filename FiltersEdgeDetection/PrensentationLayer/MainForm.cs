@@ -13,7 +13,11 @@ namespace FiltersEdgeDetection.PrensentationLayer
     {
         private Bitmap originalBitmap;
 
-        private void ApplyFilter()
+        public void SetOriginalBitmap(Bitmap bitmap) {
+            originalBitmap = bitmap;
+            ApplyFilters();
+        }
+        private void ApplyFilters()
         {
             if (originalBitmap == null)
             {
@@ -121,7 +125,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
                 {
                     originalBitmap = imageManager.LoadImage();
                     imgPreview.Image = ExtBitmap.AdaptToSquareCanvas(originalBitmap, imgPreview.Width);
-                    ApplyFilter();
+                    ApplyFilters();
                 }
             }
         }
@@ -168,7 +172,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
 
         private void comboBoxFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ApplyFilter();
+            ApplyFilters();
         }
 
         private void imgPreview_Click(object sender, EventArgs e)
@@ -178,7 +182,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
 
         private void comboBoxEdge_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ApplyFilter();
+            ApplyFilters();
         }
     }
 }

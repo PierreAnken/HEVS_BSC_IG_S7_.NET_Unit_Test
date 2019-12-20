@@ -22,11 +22,6 @@ namespace FiltersEdgeDetection.PrensentationLayer
             base.Dispose(disposing);
         }
 
-        public System.Windows.Forms.PictureBox getImagePreview()
-        {
-            return imgPreview;
-        }
- 
 
         #region Windows Form Designer generated code
 
