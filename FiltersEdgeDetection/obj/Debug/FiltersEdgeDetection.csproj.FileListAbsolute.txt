@@ -1,0 +1,9 @@
+C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\FiltersEdgeDetection.exe.config
+C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\FiltersEdgeDetection.exe
+C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\FiltersEdgeDetection.pdb
+C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.csprojAssemblyReference.cache
+C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.Properties.Resources.resources
+C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.csproj.GenerateResource.cache
+C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.exe
+C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.pdb
+C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.PrensentationLayer.MainForm.resources
