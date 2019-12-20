@@ -12,7 +12,6 @@ namespace FiltersEdgeDetection.PrensentationLayer
     public partial class MainForm : Form
     {
         private Bitmap originalBitmap;
-        private Bitmap previewBitmap;
 
         private void ApplyFilter()
         {
@@ -109,16 +108,18 @@ namespace FiltersEdgeDetection.PrensentationLayer
                 apiForm.Show();
             }
             else {
-                IImageManager imageManager = new LocalImage();
+                
 
                 OpenFileDialog ofd = new OpenFileDialog();
                 ofd.Title = "Select an image file.";
                 ofd.Filter = "Png Images(*.png)|*.png|Jpeg Images(*.jpg)|*.jpg";
                 ofd.Filter += "|Bitmap Images(*.bmp)|*.bmp";
 
+                IImageManager imageManager = new LocalImage(ofd.FileName);
+
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    originalBitmap = imageManager.LoadImage(ofd.FileName);
+                    originalBitmap = imageManager.LoadImage();
                     imgPreview.Image = ExtBitmap.AdaptToSquareCanvas(originalBitmap, imgPreview.Width);
                     ApplyFilter();
                 }

@@ -6,15 +6,16 @@ namespace FiltersEdgeDetection.PrensentationLayer
 {
     public partial class ApiForm : Form
     {
-
+        public bool isGet;
         public Form parentForm;
         public ApiForm(bool buttonGet, Form parentForm)
         {
+            this.isGet = buttonGet;
             InitializeComponent();
             this.parentForm = parentForm;
             Toolbox.SetFormControlsEnabled(parentForm, false);
 
-            if (buttonGet)
+            if (isGet)
             {
                 textBoxApiGetUrl.Visible = labelApiUrlGet.Visible = true;
                 textBoxApiPostUrl.Visible = labelApiUrlPost.Visible = false;
@@ -42,7 +43,10 @@ namespace FiltersEdgeDetection.PrensentationLayer
 
         private void buttonGetPost_Click(object sender, EventArgs e)
         {
+            if (isGet)
+            {
 
+            }
         }
     }
 }
