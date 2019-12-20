@@ -46,9 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\ExtBitmap.cs" />
-    <Compile Include="classes\ImageFilter.cs" />
-    <Compile Include="classes\Matrix.cs" />
+    <Compile Include="Classes\ExtBitmap.cs" />
+    <Compile Include="Classes\ImageFilter.cs" />
+    <Compile Include="Classes\Matrix.cs" />
+    <Compile Include="Classes\Toolbox.cs" />
+    <Compile Include="Interfaces\IImageManager.cs" />
     <Compile Include="PrensentationLayer\ApiForm.cs">
       <SubType>Form</SubType>
     </Compile>

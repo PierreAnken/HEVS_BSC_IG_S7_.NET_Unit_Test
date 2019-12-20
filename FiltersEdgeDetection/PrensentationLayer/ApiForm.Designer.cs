@@ -1,4 +1,6 @@
-﻿namespace FiltersEdgeDetection.PrensentationLayer
+﻿using FiltersEdgeDetection.Classes;
+
+namespace FiltersEdgeDetection.PrensentationLayer
 {
     partial class ApiForm
     {
@@ -13,6 +15,9 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
+            if(parentForm != null)
+                Toolbox.SetFormControlsEnabled(parentForm, true);
+
             if (disposing && (components != null))
             {
                 components.Dispose();
@@ -28,37 +33,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonApiGetPost = new System.Windows.Forms.Button();
-            this.buttonApiLoadBack = new System.Windows.Forms.Button();
             this.labelApiUrlPost = new System.Windows.Forms.Label();
             this.labelApiUrlGet = new System.Windows.Forms.Label();
             this.textBoxApiGetUrl = new System.Windows.Forms.TextBox();
             this.textBoxApiPostUrl = new System.Windows.Forms.TextBox();
+            this.buttonApiBack = new System.Windows.Forms.Button();
+            this.buttonApiGetPost = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // buttonApiGetPost
-            // 
-            this.buttonApiGetPost.Location = new System.Drawing.Point(152, 108);
-            this.buttonApiGetPost.Name = "buttonApiGetPost";
-            this.buttonApiGetPost.Size = new System.Drawing.Size(87, 34);
-            this.buttonApiGetPost.TabIndex = 0;
-            this.buttonApiGetPost.Text = "Get/Post";
-            this.buttonApiGetPost.UseVisualStyleBackColor = true;
-            this.buttonApiGetPost.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // buttonApiLoadBack
-            // 
-            this.buttonApiLoadBack.Location = new System.Drawing.Point(327, 108);
-            this.buttonApiLoadBack.Name = "buttonApiLoadBack";
-            this.buttonApiLoadBack.Size = new System.Drawing.Size(87, 34);
-            this.buttonApiLoadBack.TabIndex = 0;
-            this.buttonApiLoadBack.Text = "Back";
-            this.buttonApiLoadBack.UseVisualStyleBackColor = true;
-            this.buttonApiLoadBack.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelApiUrlPost
             // 
-            this.labelApiUrlPost.Location = new System.Drawing.Point(12, 66);
+            this.labelApiUrlPost.Location = new System.Drawing.Point(12, 37);
             this.labelApiUrlPost.Name = "labelApiUrlPost";
             this.labelApiUrlPost.Size = new System.Drawing.Size(112, 23);
             this.labelApiUrlPost.TabIndex = 1;
@@ -83,36 +68,56 @@
             // 
             // textBoxApiPostUrl
             // 
-            this.textBoxApiPostUrl.Location = new System.Drawing.Point(152, 65);
+            this.textBoxApiPostUrl.Location = new System.Drawing.Point(152, 37);
             this.textBoxApiPostUrl.Name = "textBoxApiPostUrl";
             this.textBoxApiPostUrl.Size = new System.Drawing.Size(262, 22);
             this.textBoxApiPostUrl.TabIndex = 2;
+            // 
+            // buttonApiBack
+            // 
+            this.buttonApiBack.Location = new System.Drawing.Point(327, 80);
+            this.buttonApiBack.Name = "buttonApiBack";
+            this.buttonApiBack.Size = new System.Drawing.Size(87, 42);
+            this.buttonApiBack.TabIndex = 3;
+            this.buttonApiBack.Text = "Back";
+            this.buttonApiBack.UseVisualStyleBackColor = true;
+            this.buttonApiBack.Click += new System.EventHandler(this.buttonApiBack_Click);
+            // 
+            // buttonApiGetPost
+            // 
+            this.buttonApiGetPost.Location = new System.Drawing.Point(152, 80);
+            this.buttonApiGetPost.Name = "buttonApiGetPost";
+            this.buttonApiGetPost.Size = new System.Drawing.Size(96, 42);
+            this.buttonApiGetPost.TabIndex = 4;
+            this.buttonApiGetPost.Text = "GET/POST";
+            this.buttonApiGetPost.UseVisualStyleBackColor = true;
+            this.buttonApiGetPost.Click += new System.EventHandler(this.buttonGetPost_Click);
             // 
             // ApiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 211);
+            this.ClientSize = new System.Drawing.Size(458, 150);
+            this.Controls.Add(this.buttonApiGetPost);
+            this.Controls.Add(this.buttonApiBack);
             this.Controls.Add(this.textBoxApiPostUrl);
             this.Controls.Add(this.textBoxApiGetUrl);
             this.Controls.Add(this.labelApiUrlGet);
             this.Controls.Add(this.labelApiUrlPost);
-            this.Controls.Add(this.buttonApiLoadBack);
-            this.Controls.Add(this.buttonApiGetPost);
             this.Name = "ApiForm";
             this.Text = "Load from API";
+            this.Load += new System.EventHandler(this.ApiForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonApiGetPost;
-        private System.Windows.Forms.Button buttonApiLoadBack;
         private System.Windows.Forms.Label labelApiUrlPost;
         private System.Windows.Forms.Label labelApiUrlGet;
         private System.Windows.Forms.TextBox textBoxApiGetUrl;
         private System.Windows.Forms.TextBox textBoxApiPostUrl;
+        private System.Windows.Forms.Button buttonApiBack;
+        private System.Windows.Forms.Button buttonApiGetPost;
     }
 }

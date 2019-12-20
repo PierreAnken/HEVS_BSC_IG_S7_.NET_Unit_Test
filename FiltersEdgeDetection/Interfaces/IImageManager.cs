@@ -4,7 +4,7 @@ namespace FiltersEdgeDetection.Interfaces
 {
     interface IImageManager
     {
-        Bitmap load(string path);
-        void save(string path, Bitmap img);
+        Bitmap LoadImage(string path);
+        void SaveImage(string path, Bitmap img);
     }
 }

@@ -12,6 +12,14 @@ namespace FiltersEdgeDetection.PrensentationLayer
 {
     public partial class MainForm : Form
     {
+        
+        public bool IsApiMode
+        {
+            get{
+                return radioButtonAPI.Checked;
+            }
+        }
+
         public MainForm()
         {
             InitializeComponent();
@@ -37,14 +45,46 @@ namespace FiltersEdgeDetection.PrensentationLayer
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonLoad_Click(object sender, EventArgs e)
         {
+            if (IsApiMode)
+            {
+                ApiForm apiForm = new ApiForm(true, this);
+                apiForm.Show();
+            }
+            else {
 
+            }
+        }
+
+        private void buttonSavePost_Click(object sender, EventArgs e)
+        {
+            if (IsApiMode)
+            {
+                ApiForm apiForm = new ApiForm(false, this);
+                apiForm.Show();
+            }
+            else
+            {
+
+            }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            RadioButton rb = (RadioButton)sender;
+            if (rb.Checked)
+            {
+                //api mode
+                buttonLoad.Text = "GET";
+                buttonSavePost.Text = "POST";
+            }
+            else
+            {
+                //local mode
+                buttonLoad.Text = "Load";
+                buttonSavePost.Text = "Save";
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)

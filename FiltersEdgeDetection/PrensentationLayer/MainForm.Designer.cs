@@ -105,7 +105,7 @@
             this.buttonLoad.TabIndex = 6;
             this.buttonLoad.Text = "Load";
             this.buttonLoad.UseVisualStyleBackColor = true;
-            this.buttonLoad.Click += new System.EventHandler(this.button1_Click);
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
             // buttonSavePost
             // 
@@ -115,7 +115,7 @@
             this.buttonSavePost.TabIndex = 6;
             this.buttonSavePost.Text = "Save";
             this.buttonSavePost.UseVisualStyleBackColor = true;
-            this.buttonSavePost.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSavePost.Click += new System.EventHandler(this.buttonSavePost_Click);
             // 
             // radioButtonAPI
             // 
