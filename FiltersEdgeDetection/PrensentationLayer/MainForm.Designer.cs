@@ -1,4 +1,6 @@
-﻿namespace FiltersEdgeDetection.PrensentationLayer
+﻿using System.Drawing;
+
+namespace FiltersEdgeDetection.PrensentationLayer
 {
     partial class MainForm
     {
@@ -19,6 +21,12 @@
             }
             base.Dispose(disposing);
         }
+
+        public System.Windows.Forms.PictureBox getImagePreview()
+        {
+            return imgPreview;
+        }
+ 
 
         #region Windows Form Designer generated code
 

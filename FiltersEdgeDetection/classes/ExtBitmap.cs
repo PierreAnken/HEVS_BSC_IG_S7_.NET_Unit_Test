@@ -1,9 +1,4 @@
-﻿/*
- * The Following Code was developed by Dewald Esterhuizen
- * View Documentation at: http://softwarebydefault.com
- * Licensed under Ms-PL 
-*/
-using System;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;

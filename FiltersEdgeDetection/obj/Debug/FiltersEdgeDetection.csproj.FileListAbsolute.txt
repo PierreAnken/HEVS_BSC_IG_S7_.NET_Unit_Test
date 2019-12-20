@@ -8,3 +8,6 @@ C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.csproj.GenerateResource.cache
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.exe
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.pdb
+C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\Newtonsoft.Json.dll
+C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\Newtonsoft.Json.xml
+C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.csproj.CopyComplete

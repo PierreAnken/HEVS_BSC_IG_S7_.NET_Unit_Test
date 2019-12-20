@@ -16,7 +16,7 @@ namespace FiltersEdgeDetection.classes
         {
             StreamReader streamReader = new StreamReader(path);
             Bitmap  originalBitmap = (Bitmap)Image.FromStream(streamReader.BaseStream);
-            streamReader.Close(); 
+            streamReader.Close();
 
             return originalBitmap;
         }

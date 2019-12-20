@@ -37,7 +37,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.textBoxApiPostUrl = new System.Windows.Forms.TextBox();
             this.buttonApiBack = new System.Windows.Forms.Button();
             this.buttonApiGetPost = new System.Windows.Forms.Button();
-            this.textBoxApiGetUrl = new System.Windows.Forms.TextBox();
+            this.textBoxApiGetHash = new System.Windows.Forms.TextBox();
             this.labelApiUrlPost = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
             // 
             // textBoxApiPostUrl
             // 
-            this.textBoxApiPostUrl.Location = new System.Drawing.Point(152, 37);
+            this.textBoxApiPostUrl.Location = new System.Drawing.Point(152, 38);
             this.textBoxApiPostUrl.Name = "textBoxApiPostUrl";
             this.textBoxApiPostUrl.Size = new System.Drawing.Size(262, 22);
             this.textBoxApiPostUrl.TabIndex = 2;
@@ -77,12 +77,13 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.buttonApiGetPost.UseVisualStyleBackColor = true;
             this.buttonApiGetPost.Click += new System.EventHandler(this.buttonGetPost_Click);
             // 
-            // textBoxApiGetUrl
+            // textBoxApiGetHash
             // 
-            this.textBoxApiGetUrl.Location = new System.Drawing.Point(152, 37);
-            this.textBoxApiGetUrl.Name = "textBoxApiGetUrl";
-            this.textBoxApiGetUrl.Size = new System.Drawing.Size(262, 22);
-            this.textBoxApiGetUrl.TabIndex = 2;
+            this.textBoxApiGetHash.Location = new System.Drawing.Point(152, 37);
+            this.textBoxApiGetHash.Name = "textBoxApiGetHash";
+            this.textBoxApiGetHash.Size = new System.Drawing.Size(262, 22);
+            this.textBoxApiGetHash.TabIndex = 2;
+            this.textBoxApiGetHash.Text = "xtoLyW2";
             // 
             // labelApiUrlPost
             // 
@@ -101,7 +102,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.Controls.Add(this.buttonApiGetPost);
             this.Controls.Add(this.buttonApiBack);
             this.Controls.Add(this.textBoxApiPostUrl);
-            this.Controls.Add(this.textBoxApiGetUrl);
+            this.Controls.Add(this.textBoxApiGetHash);
             this.Controls.Add(this.labelApiUrlGet);
             this.Controls.Add(this.labelApiUrlPost);
             this.Name = "ApiForm";
@@ -117,7 +118,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
         private System.Windows.Forms.TextBox textBoxApiPostUrl;
         private System.Windows.Forms.Button buttonApiBack;
         private System.Windows.Forms.Button buttonApiGetPost;
-        private System.Windows.Forms.TextBox textBoxApiGetUrl;
+        private System.Windows.Forms.TextBox textBoxApiGetHash;
         private System.Windows.Forms.Label labelApiUrlPost;
     }
 }
