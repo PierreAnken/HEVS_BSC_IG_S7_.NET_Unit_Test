@@ -49,12 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\ExtBitmap.cs" />
-    <Compile Include="Classes\ImageFilter.cs" />
-    <Compile Include="Classes\ApiImgurImage.cs" />
-    <Compile Include="Classes\Matrix.cs" />
-    <Compile Include="Classes\Toolbox.cs" />
-    <Compile Include="classes\LocalImage.cs" />
+    <Compile Include="BusinessLayer\ExtBitmap.cs" />
+    <Compile Include="BusinessLayer\ImageFilter.cs" />
+    <Compile Include="BusinessLayer\ApiImgurImage.cs" />
+    <Compile Include="BusinessLayer\Matrix.cs" />
+    <Compile Include="BusinessLayer\Toolbox.cs" />
+    <Compile Include="BusinessLayer\LocalImage.cs" />
     <Compile Include="Interfaces\IImageManager.cs" />
     <Compile Include="PrensentationLayer\ApiForm.cs">
       <SubType>Form</SubType>

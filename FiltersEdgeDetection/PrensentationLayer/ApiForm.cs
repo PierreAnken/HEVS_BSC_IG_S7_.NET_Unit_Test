@@ -32,7 +32,10 @@ namespace FiltersEdgeDetection.PrensentationLayer
                 buttonApiGetPost.Text = "POST Image";
             }
         }
-
+        public void SetErrorLabel(string error)
+        {
+            labelApiError.Text = error;
+        }
 
         private void ApiForm_Load(object sender, EventArgs e)
         {
@@ -47,16 +50,21 @@ namespace FiltersEdgeDetection.PrensentationLayer
         private void buttonGetPost_Click(object sender, EventArgs e) {
 
             string hash = textBoxApiGetHash.Text;
-            ApiImgurImage apiImgurImage = new ApiImgurImage(hash);
+            ApiImgurImage apiImgurImage = new ApiImgurImage(hash,this);
             if (isGet)
             {
                 Bitmap image = apiImgurImage.LoadImage();
-                if (image != null) {
 
+                if (image != null) {
                     Bitmap imagePreview = ExtBitmap.AdaptToSquareCanvas(image, parentForm.getImagePreview().Width);
                     parentForm.getImagePreview().Image = imagePreview;
                 }
             }
+        }
+
+        private void labelApiError_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -39,6 +39,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.buttonApiGetPost = new System.Windows.Forms.Button();
             this.textBoxApiGetHash = new System.Windows.Forms.TextBox();
             this.labelApiUrlPost = new System.Windows.Forms.Label();
+            this.labelApiError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelApiUrlGet
@@ -94,11 +95,21 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.labelApiUrlPost.Text = "API POST URL";
             this.labelApiUrlPost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // labelApiError
+            // 
+            this.labelApiError.ForeColor = System.Drawing.Color.Red;
+            this.labelApiError.Location = new System.Drawing.Point(81, 141);
+            this.labelApiError.Name = "labelApiError";
+            this.labelApiError.Size = new System.Drawing.Size(333, 30);
+            this.labelApiError.TabIndex = 5;
+            this.labelApiError.Click += new System.EventHandler(this.labelApiError_Click);
+            // 
             // ApiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 150);
+            this.ClientSize = new System.Drawing.Size(458, 180);
+            this.Controls.Add(this.labelApiError);
             this.Controls.Add(this.buttonApiGetPost);
             this.Controls.Add(this.buttonApiBack);
             this.Controls.Add(this.textBoxApiPostUrl);
@@ -120,5 +131,6 @@ namespace FiltersEdgeDetection.PrensentationLayer
         private System.Windows.Forms.Button buttonApiGetPost;
         private System.Windows.Forms.TextBox textBoxApiGetHash;
         private System.Windows.Forms.Label labelApiUrlPost;
+        private System.Windows.Forms.Label labelApiError;
     }
 }
