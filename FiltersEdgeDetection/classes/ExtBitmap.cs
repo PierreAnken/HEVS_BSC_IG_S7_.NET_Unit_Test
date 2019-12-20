@@ -43,10 +43,10 @@ namespace ImageEdgeDetection
             return bitmapResult;
         }
 
-        public static Bitmap ConvolutionFilter(this Bitmap sourceBitmap, double[,] xFilterMatrix, double[,] yFilterMatrix = null, int bias = 0, bool grayscale = false, double factor = 1)
+        public static Bitmap ConvolutionFilter(this Bitmap sourceBitmap, double[,] xFilterMatrix, double[,] yFilterMatrix = null, int bias = 0, double factor = 1)
         {
 
-            Boolean oneMatrixMode = yFilterMatrix == null;
+            bool oneMatrixMode = yFilterMatrix == null;
             BitmapData sourceData = sourceBitmap.LockBits(new Rectangle(0, 0,
                                      sourceBitmap.Width, sourceBitmap.Height),
                                                        ImageLockMode.ReadOnly,
@@ -57,19 +57,6 @@ namespace ImageEdgeDetection
 
             Marshal.Copy(sourceData.Scan0, pixelBuffer, 0, pixelBuffer.Length);
             sourceBitmap.UnlockBits(sourceData);
-
-            if (grayscale)
-            {
-                for (int k = 0; k < pixelBuffer.Length; k += 4)
-                {
-                    float rgb = pixelBuffer[k] * 0.11f;
-                    rgb += pixelBuffer[k + 1] * 0.59f;
-                    rgb += pixelBuffer[k + 2] * 0.3f;
-
-                    Color greyscalColor = Color.FromArgb(255, (int)rgb, (int)rgb, (int)rgb);
-                    ImageFilters.SetPixel(pixelBuffer, k, greyscalColor);
-                }
-            }
 
             int filterOffset = 1;
             if(oneMatrixMode){
@@ -166,55 +153,13 @@ namespace ImageEdgeDetection
             value = (value < 0) ? 0 : (value > 255) ? 255 : value;
         }
 
-        public static Bitmap LaplacianFilter(this Bitmap sourceBitmap, double[,] matrix, bool grayscale){
-            return ConvolutionFilter(sourceBitmap, matrix, null, 0, grayscale, 1.0);
+        public static Bitmap LaplacianFilter(this Bitmap sourceBitmap, double[,] matrix){
+            return ConvolutionFilter(sourceBitmap, matrix, null, 0, 1.0);
         }
 
-        public static Bitmap GaussianFilter(this Bitmap sourceBitmap, double[,] matrix, double factor, bool grayscale)
+        public static Bitmap DoubleMatrixFilter(this Bitmap sourceBitmap, double[,] matrix, double[,] matrix2)
         {
-            return ConvolutionFilter(sourceBitmap, matrix, null, 0, grayscale, factor);
+            return ConvolutionFilter(sourceBitmap, matrix, matrix2, 0);
         }
-
-        public static Bitmap Laplacian3x3OfGaussian3x3Filter(this Bitmap sourceBitmap)
-        {
-            Bitmap resultBitmap = GaussianFilter(sourceBitmap, Matrix.Gaussian3x3, 1.0 / 16.0, true);
-            return LaplacianFilter(resultBitmap, Matrix.Laplacian3x3, false);
-        }
-
-        public static Bitmap Laplacian3x3OfGaussian5x5Filter1(this Bitmap sourceBitmap)
-        {
-            Bitmap resultBitmap = GaussianFilter(sourceBitmap, Matrix.Gaussian5x5Type1, 1.0 / 159.0, true);
-            return LaplacianFilter(resultBitmap, Matrix.Laplacian3x3, false);
-        }
-
-        public static Bitmap Laplacian3x3OfGaussian5x5Filter2(this Bitmap sourceBitmap)
-        {
-            Bitmap resultBitmap = GaussianFilter(sourceBitmap, Matrix.Gaussian5x5Type2, 1.0 / 256.0, true);
-            return LaplacianFilter(resultBitmap, Matrix.Laplacian3x3, false);
-        }
-
-        public static Bitmap Laplacian5x5OfGaussian3x3Filter(this Bitmap sourceBitmap)
-        {
-            Bitmap resultBitmap = GaussianFilter(sourceBitmap, Matrix.Gaussian3x3, 1.0 / 16.0, true);
-            return LaplacianFilter(resultBitmap, Matrix.Laplacian5x5, false);
-        }
-
-        public static Bitmap Laplacian5x5OfGaussian5x5Filter1(this Bitmap sourceBitmap)
-        {
-            Bitmap resultBitmap = GaussianFilter(sourceBitmap, Matrix.Gaussian5x5Type1, 1.0 / 159.0, true);
-            return LaplacianFilter(resultBitmap, Matrix.Laplacian5x5, false);
-        }
-
-        public static Bitmap Laplacian5x5OfGaussian5x5Filter2(this Bitmap sourceBitmap)
-        {
-            Bitmap resultBitmap = GaussianFilter(sourceBitmap, Matrix.Gaussian5x5Type2, 1.0 / 256.0, true);
-            return LaplacianFilter(resultBitmap, Matrix.Laplacian5x5, false);
-        }
-
-        public static Bitmap DoubleMatrixFilter(this Bitmap sourceBitmap, double[,] matrix, double[,] matrix2, bool grayscale)
-        {
-            return ConvolutionFilter(sourceBitmap, matrix, matrix2, 0, grayscale);
-        }
-
     }
 }

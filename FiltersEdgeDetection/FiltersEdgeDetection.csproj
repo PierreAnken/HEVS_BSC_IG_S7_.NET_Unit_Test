@@ -49,6 +49,12 @@
     <Compile Include="classes\ExtBitmap.cs" />
     <Compile Include="classes\ImageFilter.cs" />
     <Compile Include="classes\Matrix.cs" />
+    <Compile Include="PrensentationLayer\ApiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrensentationLayer\ApiForm.Designer.cs">
+      <DependentUpon>ApiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrensentationLayer\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PrensentationLayer\ApiForm.resx">
+      <DependentUpon>ApiForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrensentationLayer\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

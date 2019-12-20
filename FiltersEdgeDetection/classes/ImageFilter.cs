@@ -38,6 +38,28 @@ namespace PictureBox.Image.Testes
             return bmp;
         }
 
+        //black and white filter
+        public static Bitmap ApplyBlackWhite(Bitmap bmp)
+        {
+            byte[] pixelBuffer = BitmapToByteArray(bmp, ref bitmapData);
+            int rgb;
+            Color c0,c1;
+
+            for (int y = 0; y < bitmapData.Height; y++)
+                for (int x = 0; x < bitmapData.Width; x++)
+                {
+                    int pixelIndex = y * bitmapData.Stride + x * 4;
+                    c0 = GetColorFromBuffer(pixelBuffer, pixelIndex);
+                    rgb = (c0.R + c0.G + c0.B) / 3;
+                    c1 = Color.FromArgb(c0.A, rgb, rgb, rgb);
+                    SetPixel(pixelBuffer, pixelIndex, c1);
+                }
+
+            Marshal.Copy(pixelBuffer, 0, bitmapData.Scan0, pixelBuffer.Length);
+            bmp.UnlockBits(bitmapData);
+            return bmp;
+        }
+
         public static Color GetColorFromBuffer(byte[] pixelBuffer, int index)
         {
             int blue = pixelBuffer[index];
@@ -93,7 +115,6 @@ namespace PictureBox.Image.Testes
             return realHashStr;
         }
 
-        //apply magic mosaic
         public static Bitmap ApplyFilterMagicMosaic(Bitmap bmp)
         {
 

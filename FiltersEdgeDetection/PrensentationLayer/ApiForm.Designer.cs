@@ -38,7 +38,7 @@
             // 
             // buttonApiGetPost
             // 
-            this.buttonApiGetPost.Location = new System.Drawing.Point(110, 134);
+            this.buttonApiGetPost.Location = new System.Drawing.Point(152, 108);
             this.buttonApiGetPost.Name = "buttonApiGetPost";
             this.buttonApiGetPost.Size = new System.Drawing.Size(87, 34);
             this.buttonApiGetPost.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             // buttonApiLoadBack
             // 
-            this.buttonApiLoadBack.Location = new System.Drawing.Point(264, 134);
+            this.buttonApiLoadBack.Location = new System.Drawing.Point(327, 108);
             this.buttonApiLoadBack.Name = "buttonApiLoadBack";
             this.buttonApiLoadBack.Size = new System.Drawing.Size(87, 34);
             this.buttonApiLoadBack.TabIndex = 0;
@@ -92,7 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 203);
+            this.ClientSize = new System.Drawing.Size(472, 211);
             this.Controls.Add(this.textBoxApiPostUrl);
             this.Controls.Add(this.textBoxApiGetUrl);
             this.Controls.Add(this.labelApiUrlGet);
