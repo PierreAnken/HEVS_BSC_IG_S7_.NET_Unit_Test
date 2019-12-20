@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FiltersEdgeDetection.classes;
+using FiltersEdgeDetection.Interfaces;
+using ImageEdgeDetection;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +15,8 @@ namespace FiltersEdgeDetection.PrensentationLayer
 {
     public partial class MainForm : Form
     {
+        private Bitmap originalBitmap;
+        private Bitmap previewBitmap;
         
         public bool IsApiMode
         {
@@ -53,7 +58,19 @@ namespace FiltersEdgeDetection.PrensentationLayer
                 apiForm.Show();
             }
             else {
+                IImageManager imageManager = new LocalImage();
 
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Title = "Select an image file.";
+                ofd.Filter = "Png Images(*.png)|*.png|Jpeg Images(*.jpg)|*.jpg";
+                ofd.Filter += "|Bitmap Images(*.bmp)|*.bmp";
+
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    originalBitmap = imageManager.LoadImage(ofd.FileName);
+                    previewBitmap = ExtBitmap.AdaptToSquareCanvas(originalBitmap, imgPreview.Width);
+                    imgPreview.Image = previewBitmap;
+                }
             }
         }
 
@@ -66,8 +83,8 @@ namespace FiltersEdgeDetection.PrensentationLayer
             }
             else
             {
-
-            }
+                
+            }            
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -98,6 +115,11 @@ namespace FiltersEdgeDetection.PrensentationLayer
         }
 
         private void comboBoxFilters_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imgPreview_Click(object sender, EventArgs e)
         {
 
         }

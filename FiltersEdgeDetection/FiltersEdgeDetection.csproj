@@ -50,6 +50,7 @@
     <Compile Include="Classes\ImageFilter.cs" />
     <Compile Include="Classes\Matrix.cs" />
     <Compile Include="Classes\Toolbox.cs" />
+    <Compile Include="classes\LocalImage.cs" />
     <Compile Include="Interfaces\IImageManager.cs" />
     <Compile Include="PrensentationLayer\ApiForm.cs">
       <SubType>Form</SubType>
