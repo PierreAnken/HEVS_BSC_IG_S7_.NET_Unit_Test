@@ -56,6 +56,7 @@
             // 
             this.comboBoxFilters.FormattingEnabled = true;
             this.comboBoxFilters.Items.AddRange(new object[] {
+            "",
             "Black and White",
             "Crazy Filter",
             "Magic Mosaic"});
@@ -69,6 +70,7 @@
             // 
             this.comboBoxEdge.FormattingEnabled = true;
             this.comboBoxEdge.Items.AddRange(new object[] {
+            "",
             "Kirsch",
             "Laplacian 3x3",
             "Prewitt"});
@@ -76,6 +78,7 @@
             this.comboBoxEdge.Name = "comboBoxEdge";
             this.comboBoxEdge.Size = new System.Drawing.Size(157, 24);
             this.comboBoxEdge.TabIndex = 3;
+            this.comboBoxEdge.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdge_SelectedIndexChanged);
             // 
             // labelFilters
             // 

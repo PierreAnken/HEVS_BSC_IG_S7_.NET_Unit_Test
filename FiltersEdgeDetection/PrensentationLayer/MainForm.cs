@@ -1,15 +1,11 @@
 ﻿using FiltersEdgeDetection.classes;
 using FiltersEdgeDetection.Interfaces;
 using ImageEdgeDetection;
+using PictureBox.Image.Testes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using FiltersEdgeDetection.Classes;
 
 namespace FiltersEdgeDetection.PrensentationLayer
 {
@@ -17,7 +13,62 @@ namespace FiltersEdgeDetection.PrensentationLayer
     {
         private Bitmap originalBitmap;
         private Bitmap previewBitmap;
-        
+
+        private void ApplyFilter()
+        {
+            if (originalBitmap == null)
+            {
+                return;
+            }
+
+            Toolbox.SetFormControlsEnabled(this, false);
+            Bitmap resultBitmap = new Bitmap(originalBitmap);
+
+            // First apply filter
+            if (comboBoxFilters.SelectedItem != null)
+            {
+                string selectedFilter = comboBoxFilters.SelectedItem.ToString();
+                switch (selectedFilter)
+                {
+                    case "Black and White":
+                        resultBitmap = ImageFilters.ApplyBlackWhite(resultBitmap);
+                        break;
+                    case "Crazy Filter":
+                        resultBitmap = ImageFilters.ApplyFilterCrazy(resultBitmap);
+                        break;
+                    case "Magic Mosaic":
+                        resultBitmap = ImageFilters.ApplyFilterMagicMosaic(resultBitmap);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            // Then apply Edge detection
+            if (comboBoxEdge.SelectedItem != null)
+            {
+                string selectedEdgeDetection = comboBoxEdge.SelectedItem.ToString();
+                switch (selectedEdgeDetection)
+                {
+                    case "Laplacian 3x3":
+                        resultBitmap = ExtBitmap.LaplacianFilter(resultBitmap, Matrix.Laplacian3x3);
+                        break;
+                    case "Prewitt":
+                        resultBitmap = ExtBitmap.DoubleMatrixFilter(resultBitmap, Matrix.Prewitt3x3Horizontal, Matrix.Prewitt3x3Vertical);
+                        break;
+                    case "Kirsch":
+                        resultBitmap = ExtBitmap.DoubleMatrixFilter(resultBitmap, Matrix.Kirsch3x3Horizontal, Matrix.Kirsch3x3Vertical);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            //finaly generate preview
+            imgPreview.Image = resultBitmap.AdaptToSquareCanvas(imgPreview.Width);
+
+            Toolbox.SetFormControlsEnabled(this, true);
+        }
+
         public bool IsApiMode
         {
             get{
@@ -68,8 +119,8 @@ namespace FiltersEdgeDetection.PrensentationLayer
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     originalBitmap = imageManager.LoadImage(ofd.FileName);
-                    previewBitmap = ExtBitmap.AdaptToSquareCanvas(originalBitmap, imgPreview.Width);
-                    imgPreview.Image = previewBitmap;
+                    imgPreview.Image = ExtBitmap.AdaptToSquareCanvas(originalBitmap, imgPreview.Width);
+                    ApplyFilter();
                 }
             }
         }
@@ -116,12 +167,17 @@ namespace FiltersEdgeDetection.PrensentationLayer
 
         private void comboBoxFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            ApplyFilter();
         }
 
         private void imgPreview_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBoxEdge_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ApplyFilter();
         }
     }
 }
