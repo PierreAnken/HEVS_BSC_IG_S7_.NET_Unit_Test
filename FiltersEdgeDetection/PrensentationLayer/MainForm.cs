@@ -56,5 +56,10 @@ namespace FiltersEdgeDetection.PrensentationLayer
         {
 
         }
+
+        private void comboBoxFilters_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

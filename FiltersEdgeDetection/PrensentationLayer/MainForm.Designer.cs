@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.imgPreview = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxFilters = new System.Windows.Forms.ComboBox();
+            this.comboBoxEdge = new System.Windows.Forms.ComboBox();
             this.labelFilters = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonLoad = new System.Windows.Forms.Button();
@@ -52,21 +52,30 @@
             this.imgPreview.TabIndex = 0;
             this.imgPreview.TabStop = false;
             // 
-            // comboBox1
+            // comboBoxFilters
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(147, 530);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(139, 24);
-            this.comboBox1.TabIndex = 2;
+            this.comboBoxFilters.FormattingEnabled = true;
+            this.comboBoxFilters.Items.AddRange(new object[] {
+            "Black and White",
+            "Crazy Filter",
+            "Magic Mosaic"});
+            this.comboBoxFilters.Location = new System.Drawing.Point(147, 530);
+            this.comboBoxFilters.Name = "comboBoxFilters";
+            this.comboBoxFilters.Size = new System.Drawing.Size(139, 24);
+            this.comboBoxFilters.TabIndex = 2;
+            this.comboBoxFilters.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilters_SelectedIndexChanged);
             // 
-            // comboBox2
+            // comboBoxEdge
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(430, 531);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(157, 24);
-            this.comboBox2.TabIndex = 3;
+            this.comboBoxEdge.FormattingEnabled = true;
+            this.comboBoxEdge.Items.AddRange(new object[] {
+            "Kirsch",
+            "Laplacian 3x3",
+            "Prewitt"});
+            this.comboBoxEdge.Location = new System.Drawing.Point(430, 531);
+            this.comboBoxEdge.Name = "comboBoxEdge";
+            this.comboBoxEdge.Size = new System.Drawing.Size(157, 24);
+            this.comboBoxEdge.TabIndex = 3;
             // 
             // labelFilters
             // 
@@ -150,7 +159,7 @@
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(343, 50);
             this.title.TabIndex = 1;
-            this.title.Text = "Image filter + edge detection";
+            this.title.Text = "Image manipulation V1.0";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.title.Click += new System.EventHandler(this.title_Click);
             // 
@@ -167,8 +176,8 @@
             this.Controls.Add(this.buttonLoad);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelFilters);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxEdge);
+            this.Controls.Add(this.comboBoxFilters);
             this.Controls.Add(this.title);
             this.Controls.Add(this.imgPreview);
             this.Name = "MainForm";
@@ -183,8 +192,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox imgPreview;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxFilters;
+        private System.Windows.Forms.ComboBox comboBoxEdge;
         private System.Windows.Forms.Label labelFilters;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonLoad;
