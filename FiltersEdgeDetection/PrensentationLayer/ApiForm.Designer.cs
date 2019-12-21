@@ -1,4 +1,4 @@
-﻿using FiltersEdgeDetection.Classes;
+﻿using BLL;
 
 namespace FiltersEdgeDetection.PrensentationLayer
 {
@@ -34,11 +34,9 @@ namespace FiltersEdgeDetection.PrensentationLayer
         private void InitializeComponent()
         {
             this.labelApiUrlGet = new System.Windows.Forms.Label();
-            this.textBoxApiPostUrl = new System.Windows.Forms.TextBox();
             this.buttonApiBack = new System.Windows.Forms.Button();
-            this.buttonApiGetPost = new System.Windows.Forms.Button();
+            this.buttonApiGet = new System.Windows.Forms.Button();
             this.textBoxApiGetHash = new System.Windows.Forms.TextBox();
-            this.labelApiUrlPost = new System.Windows.Forms.Label();
             this.labelApiError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -51,49 +49,33 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.labelApiUrlGet.Text = "imgur image hash";
             this.labelApiUrlGet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBoxApiPostUrl
-            // 
-            this.textBoxApiPostUrl.Location = new System.Drawing.Point(152, 38);
-            this.textBoxApiPostUrl.Name = "textBoxApiPostUrl";
-            this.textBoxApiPostUrl.Size = new System.Drawing.Size(262, 22);
-            this.textBoxApiPostUrl.TabIndex = 2;
-            // 
             // buttonApiBack
             // 
-            this.buttonApiBack.Location = new System.Drawing.Point(327, 80);
+            this.buttonApiBack.Location = new System.Drawing.Point(212, 96);
             this.buttonApiBack.Name = "buttonApiBack";
             this.buttonApiBack.Size = new System.Drawing.Size(87, 42);
             this.buttonApiBack.TabIndex = 3;
-            this.buttonApiBack.Text = "Back";
+            this.buttonApiBack.Text = "Cancel";
             this.buttonApiBack.UseVisualStyleBackColor = true;
             this.buttonApiBack.Click += new System.EventHandler(this.buttonApiBack_Click);
             // 
-            // buttonApiGetPost
+            // buttonApiGet
             // 
-            this.buttonApiGetPost.Location = new System.Drawing.Point(152, 80);
-            this.buttonApiGetPost.Name = "buttonApiGetPost";
-            this.buttonApiGetPost.Size = new System.Drawing.Size(96, 42);
-            this.buttonApiGetPost.TabIndex = 4;
-            this.buttonApiGetPost.Text = "GET/POST";
-            this.buttonApiGetPost.UseVisualStyleBackColor = true;
-            this.buttonApiGetPost.Click += new System.EventHandler(this.buttonGetPost_Click);
+            this.buttonApiGet.Location = new System.Drawing.Point(66, 96);
+            this.buttonApiGet.Name = "buttonApiGet";
+            this.buttonApiGet.Size = new System.Drawing.Size(96, 42);
+            this.buttonApiGet.TabIndex = 4;
+            this.buttonApiGet.Text = "GET";
+            this.buttonApiGet.UseVisualStyleBackColor = true;
+            this.buttonApiGet.Click += new System.EventHandler(this.buttonGet_Click);
             // 
             // textBoxApiGetHash
             // 
             this.textBoxApiGetHash.Location = new System.Drawing.Point(152, 37);
             this.textBoxApiGetHash.Name = "textBoxApiGetHash";
-            this.textBoxApiGetHash.Size = new System.Drawing.Size(262, 22);
+            this.textBoxApiGetHash.Size = new System.Drawing.Size(128, 22);
             this.textBoxApiGetHash.TabIndex = 2;
             this.textBoxApiGetHash.Text = "xtoLyW2";
-            // 
-            // labelApiUrlPost
-            // 
-            this.labelApiUrlPost.Location = new System.Drawing.Point(12, 37);
-            this.labelApiUrlPost.Name = "labelApiUrlPost";
-            this.labelApiUrlPost.Size = new System.Drawing.Size(112, 23);
-            this.labelApiUrlPost.TabIndex = 1;
-            this.labelApiUrlPost.Text = "API POST URL";
-            this.labelApiUrlPost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelApiError
             // 
@@ -102,20 +84,17 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.labelApiError.Name = "labelApiError";
             this.labelApiError.Size = new System.Drawing.Size(333, 30);
             this.labelApiError.TabIndex = 5;
-            this.labelApiError.Click += new System.EventHandler(this.labelApiError_Click);
             // 
             // ApiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 180);
+            this.ClientSize = new System.Drawing.Size(362, 158);
             this.Controls.Add(this.labelApiError);
-            this.Controls.Add(this.buttonApiGetPost);
+            this.Controls.Add(this.buttonApiGet);
             this.Controls.Add(this.buttonApiBack);
-            this.Controls.Add(this.textBoxApiPostUrl);
             this.Controls.Add(this.textBoxApiGetHash);
             this.Controls.Add(this.labelApiUrlGet);
-            this.Controls.Add(this.labelApiUrlPost);
             this.Name = "ApiForm";
             this.Text = "Load from API";
             this.Load += new System.EventHandler(this.ApiForm_Load);
@@ -126,11 +105,9 @@ namespace FiltersEdgeDetection.PrensentationLayer
 
         #endregion
         private System.Windows.Forms.Label labelApiUrlGet;
-        private System.Windows.Forms.TextBox textBoxApiPostUrl;
         private System.Windows.Forms.Button buttonApiBack;
-        private System.Windows.Forms.Button buttonApiGetPost;
+        private System.Windows.Forms.Button buttonApiGet;
         private System.Windows.Forms.TextBox textBoxApiGetHash;
-        private System.Windows.Forms.Label labelApiUrlPost;
         private System.Windows.Forms.Label labelApiError;
     }
 }

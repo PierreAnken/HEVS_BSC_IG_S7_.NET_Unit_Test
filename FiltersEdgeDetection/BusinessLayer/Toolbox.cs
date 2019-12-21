@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace FiltersEdgeDetection.Classes
+namespace BLL
 {
     public static class Toolbox
     {

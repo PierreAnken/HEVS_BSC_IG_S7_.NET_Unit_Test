@@ -36,12 +36,10 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.comboBoxEdge = new System.Windows.Forms.ComboBox();
             this.labelFilters = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonLoad = new System.Windows.Forms.Button();
-            this.buttonSavePost = new System.Windows.Forms.Button();
-            this.radioButtonAPI = new System.Windows.Forms.RadioButton();
-            this.radioButtonLocal = new System.Windows.Forms.RadioButton();
-            this.labelMode = new System.Windows.Forms.Label();
+            this.buttonLoadDisk = new System.Windows.Forms.Button();
+            this.buttonSaveDisk = new System.Windows.Forms.Button();
             this.title = new System.Windows.Forms.Label();
+            this.buttonLoadImgur = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgPreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,71 +101,46 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // buttonLoad
+            // buttonLoadDisk
             // 
-            this.buttonLoad.Location = new System.Drawing.Point(176, 620);
-            this.buttonLoad.Name = "buttonLoad";
-            this.buttonLoad.Size = new System.Drawing.Size(110, 35);
-            this.buttonLoad.TabIndex = 6;
-            this.buttonLoad.Text = "Load";
-            this.buttonLoad.UseVisualStyleBackColor = true;
-            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
+            this.buttonLoadDisk.Location = new System.Drawing.Point(227, 625);
+            this.buttonLoadDisk.Name = "buttonLoadDisk";
+            this.buttonLoadDisk.Size = new System.Drawing.Size(123, 35);
+            this.buttonLoadDisk.TabIndex = 6;
+            this.buttonLoadDisk.Text = "Load from disk";
+            this.buttonLoadDisk.UseVisualStyleBackColor = true;
+            this.buttonLoadDisk.Click += new System.EventHandler(this.buttonLoadDisk_Click);
             // 
-            // buttonSavePost
+            // buttonSaveDisk
             // 
-            this.buttonSavePost.Location = new System.Drawing.Point(365, 620);
-            this.buttonSavePost.Name = "buttonSavePost";
-            this.buttonSavePost.Size = new System.Drawing.Size(110, 35);
-            this.buttonSavePost.TabIndex = 6;
-            this.buttonSavePost.Text = "Save";
-            this.buttonSavePost.UseVisualStyleBackColor = true;
-            this.buttonSavePost.Click += new System.EventHandler(this.buttonSavePost_Click);
-            // 
-            // radioButtonAPI
-            // 
-            this.radioButtonAPI.AutoSize = true;
-            this.radioButtonAPI.Location = new System.Drawing.Point(567, 35);
-            this.radioButtonAPI.Name = "radioButtonAPI";
-            this.radioButtonAPI.Size = new System.Drawing.Size(89, 21);
-            this.radioButtonAPI.TabIndex = 7;
-            this.radioButtonAPI.Text = "imgur API";
-            this.radioButtonAPI.UseVisualStyleBackColor = true;
-            this.radioButtonAPI.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // radioButtonLocal
-            // 
-            this.radioButtonLocal.AutoSize = true;
-            this.radioButtonLocal.Checked = true;
-            this.radioButtonLocal.Location = new System.Drawing.Point(567, 57);
-            this.radioButtonLocal.Name = "radioButtonLocal";
-            this.radioButtonLocal.Size = new System.Drawing.Size(63, 21);
-            this.radioButtonLocal.TabIndex = 7;
-            this.radioButtonLocal.TabStop = true;
-            this.radioButtonLocal.Text = "Local";
-            this.radioButtonLocal.UseVisualStyleBackColor = true;
-            this.radioButtonLocal.CheckedChanged += new System.EventHandler(this.radioButtonLocal_CheckedChanged);
-            // 
-            // labelMode
-            // 
-            this.labelMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMode.Location = new System.Drawing.Point(469, 35);
-            this.labelMode.Name = "labelMode";
-            this.labelMode.Size = new System.Drawing.Size(80, 43);
-            this.labelMode.TabIndex = 8;
-            this.labelMode.Text = "Mode";
-            this.labelMode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.labelMode.Click += new System.EventHandler(this.label2_Click);
+            this.buttonSaveDisk.Location = new System.Drawing.Point(477, 625);
+            this.buttonSaveDisk.Name = "buttonSaveDisk";
+            this.buttonSaveDisk.Size = new System.Drawing.Size(110, 35);
+            this.buttonSaveDisk.TabIndex = 6;
+            this.buttonSaveDisk.Text = "Save to disk";
+            this.buttonSaveDisk.UseVisualStyleBackColor = true;
+            this.buttonSaveDisk.Click += new System.EventHandler(this.buttonSaveDisk_Click);
             // 
             // title
             // 
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.Location = new System.Drawing.Point(81, 30);
+            this.title.Location = new System.Drawing.Point(81, 38);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(292, 50);
+            this.title.Size = new System.Drawing.Size(506, 50);
             this.title.TabIndex = 1;
             this.title.Text = "Image manipulation V1.0";
-            this.title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.title.Click += new System.EventHandler(this.title_Click);
+            // 
+            // buttonLoadImgur
+            // 
+            this.buttonLoadImgur.Location = new System.Drawing.Point(86, 625);
+            this.buttonLoadImgur.Name = "buttonLoadImgur";
+            this.buttonLoadImgur.Size = new System.Drawing.Size(123, 35);
+            this.buttonLoadImgur.TabIndex = 6;
+            this.buttonLoadImgur.Text = "Load from imgur";
+            this.buttonLoadImgur.UseVisualStyleBackColor = true;
+            this.buttonLoadImgur.Click += new System.EventHandler(this.buttonLoadImgur_Click);
             // 
             // MainForm
             // 
@@ -175,11 +148,9 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(668, 691);
-            this.Controls.Add(this.labelMode);
-            this.Controls.Add(this.radioButtonLocal);
-            this.Controls.Add(this.radioButtonAPI);
-            this.Controls.Add(this.buttonSavePost);
-            this.Controls.Add(this.buttonLoad);
+            this.Controls.Add(this.buttonSaveDisk);
+            this.Controls.Add(this.buttonLoadImgur);
+            this.Controls.Add(this.buttonLoadDisk);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelFilters);
             this.Controls.Add(this.comboBoxEdge);
@@ -191,7 +162,6 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgPreview)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -202,11 +172,9 @@ namespace FiltersEdgeDetection.PrensentationLayer
         private System.Windows.Forms.ComboBox comboBoxEdge;
         private System.Windows.Forms.Label labelFilters;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonLoad;
-        private System.Windows.Forms.Button buttonSavePost;
-        private System.Windows.Forms.RadioButton radioButtonAPI;
-        private System.Windows.Forms.RadioButton radioButtonLocal;
-        private System.Windows.Forms.Label labelMode;
+        private System.Windows.Forms.Button buttonLoadDisk;
+        private System.Windows.Forms.Button buttonSaveDisk;
         private System.Windows.Forms.Label title;
+        private System.Windows.Forms.Button buttonLoadImgur;
     }
 }

@@ -1,5 +1,5 @@
 ﻿
-namespace ImageEdgeDetection
+namespace BLL
 {
     public static class Matrix
     {

@@ -51,11 +51,13 @@
   <ItemGroup>
     <Compile Include="BusinessLayer\ExtBitmap.cs" />
     <Compile Include="BusinessLayer\ImageFilter.cs" />
-    <Compile Include="Interfaces\ImgurBitmapManager.cs" />
+    <Compile Include="DataAccessLayer\BllBitmapManager.cs" />
+    <Compile Include="DataAccessLayer\MainFormBitmapManager.cs" />
+    <Compile Include="DataAccessLayer\ImgurBitmapManager.cs" />
     <Compile Include="BusinessLayer\Matrix.cs" />
     <Compile Include="BusinessLayer\Toolbox.cs" />
-    <Compile Include="Interfaces\DiskBitmapManager.cs" />
-    <Compile Include="Interfaces\IBitmapManager.cs" />
+    <Compile Include="DataAccessLayer\DiskBitmapManager.cs" />
+    <Compile Include="DataAccessLayer\IBitmapManager.cs" />
     <Compile Include="PrensentationLayer\ApiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,7 +70,7 @@
     <Compile Include="PrensentationLayer\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="App.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="PrensentationLayer\ApiForm.resx">
       <DependentUpon>ApiForm.cs</DependentUpon>

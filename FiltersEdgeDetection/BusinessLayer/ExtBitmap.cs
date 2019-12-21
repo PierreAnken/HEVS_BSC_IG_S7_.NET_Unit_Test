@@ -3,9 +3,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Drawing.Drawing2D;
-using PictureBox.Image.Testes;
 
-namespace ImageEdgeDetection
+namespace BLL
 {
     public static class ExtBitmap
     {

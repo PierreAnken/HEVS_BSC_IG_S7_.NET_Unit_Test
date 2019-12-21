@@ -1,6 +1,5 @@
-﻿using FiltersEdgeDetection.classes;
-using FiltersEdgeDetection.Classes;
-using ImageEdgeDetection;
+﻿using BLL;
+using DAL;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -9,28 +8,12 @@ namespace FiltersEdgeDetection.PrensentationLayer
 {
     public partial class ApiForm : Form
     {
-        public bool isGet;
         public MainForm parentForm;
-        public ApiForm(bool buttonGet, MainForm parentForm)
+        private static readonly BLLBitmapManager bLLBitmapManager = new BLLBitmapManager();
+        public ApiForm(MainForm parentForm)
         {
-            this.isGet = buttonGet;
             InitializeComponent();
             this.parentForm = parentForm;
-            Toolbox.SetFormControlsEnabled(parentForm, false);
-
-            if (isGet)
-            {
-                textBoxApiGetHash.Visible = labelApiUrlGet.Visible = true;
-                textBoxApiPostUrl.Visible = labelApiUrlPost.Visible = false;
-                buttonApiGetPost.Text = "GET Image";
-            }
-            else
-            {
-                labelApiUrlPost.Visible = true;
-                textBoxApiGetHash.Visible = labelApiUrlGet.Visible = false;
-                textBoxApiPostUrl.Visible = labelApiUrlPost.Visible = true;
-                buttonApiGetPost.Text = "POST Image";
-            }
         }
         public void SetErrorLabel(string error)
         {
@@ -44,27 +27,20 @@ namespace FiltersEdgeDetection.PrensentationLayer
 
         private void buttonApiBack_Click(object sender, EventArgs e)
         {
-            Dispose();
+            Hide();
         }
 
-        private void buttonGetPost_Click(object sender, EventArgs e) {
-
+        private void buttonGet_Click(object sender, EventArgs e) {
+            Toolbox.SetFormControlsEnabled(parentForm, false);
             string hash = textBoxApiGetHash.Text;
             ImgurBitmapManager apiImgurImage = new ImgurBitmapManager(hash,this);
-            if (isGet)
-            {
-                Bitmap image = apiImgurImage.GetBitmap();
+            Bitmap bitmap = apiImgurImage.GetBitmap();
 
-                if (image != null) {
-                    parentForm.SetOriginalBitmap(image);
-                    Dispose();
-                }
+            if (bitmap != null) {
+                bLLBitmapManager.SetBitmap(bitmap);
+                App.ApplyFilters();
+                Hide();
             }
-        }
-
-        private void labelApiError_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

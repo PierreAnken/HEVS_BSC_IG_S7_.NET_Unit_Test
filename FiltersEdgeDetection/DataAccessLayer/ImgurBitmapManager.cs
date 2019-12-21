@@ -1,16 +1,13 @@
-﻿using FiltersEdgeDetection.Interfaces;
-using FiltersEdgeDetection.PrensentationLayer;
-using Newtonsoft.Json;
+﻿using FiltersEdgeDetection.PrensentationLayer;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Net.Http.Headers;
 
-namespace FiltersEdgeDetection.classes
+namespace DAL
 {
-    class ImgurBitmapManager : IBitmapManager
+    public class ImgurBitmapManager : IBitmapManager
     {
         private static readonly string CLIENTID = "ec26fa431d0e2b9";
         private static readonly string APIBASEURL = "https://api.imgur.com/3/";

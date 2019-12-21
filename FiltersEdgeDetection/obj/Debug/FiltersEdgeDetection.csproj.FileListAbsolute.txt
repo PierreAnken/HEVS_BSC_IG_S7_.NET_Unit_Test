@@ -3,7 +3,6 @@ C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\FiltersEdgeDetection
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\FiltersEdgeDetection.pdb
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\Newtonsoft.Json.dll
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\Newtonsoft.Json.xml
-C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.csprojAssemblyReference.cache
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.PrensentationLayer.ApiForm.resources
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.PrensentationLayer.MainForm.resources
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.Properties.Resources.resources

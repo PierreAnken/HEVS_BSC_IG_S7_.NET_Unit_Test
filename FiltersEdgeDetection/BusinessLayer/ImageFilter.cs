@@ -4,7 +4,7 @@ using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 
-namespace PictureBox.Image.Testes
+namespace BLL
 {
     public static class ImageFilters
     {

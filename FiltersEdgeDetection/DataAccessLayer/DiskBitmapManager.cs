@@ -1,10 +1,9 @@
-﻿using FiltersEdgeDetection.Interfaces;
-using System.Drawing;
+﻿using System.Drawing;
 using System.IO;
 
-namespace FiltersEdgeDetection.classes
+namespace DAL
 {
-    class DiskBitmapManager : IBitmapManager
+    public class DiskBitmapManager : IBitmapManager
     {
         readonly string diskPath;
 

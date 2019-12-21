@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace FiltersEdgeDetection.Interfaces
+namespace DAL
 {
     interface IBitmapManager
     {
