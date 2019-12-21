@@ -23,6 +23,10 @@ namespace FiltersEdgeDetection.PrensentationLayer
             mainFormBitmapManager = new MainFormBitmapManager(this);
         }
 
+        public void ResetFilters() {
+            comboBoxEdge.SelectedItem = "";
+            comboBoxFilters.SelectedItem = "";
+        }
         public ComboBox GetComboBoxFilters()
         {
             return comboBoxFilters;
@@ -81,7 +85,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
                     Bitmap imgurBitmap = imageManager.GetBitmap();
                     bLLOriginalBitmapManager.SetBitmap(imgurBitmap);
                     imgPreview.Image = ExtBitmap.AdaptToSquareCanvas(imgurBitmap, imgPreview.Width);
-                    App.ApplyFilters();
+                    ResetFilters();
                 }
             }
         }

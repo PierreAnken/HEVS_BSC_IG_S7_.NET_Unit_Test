@@ -38,7 +38,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
 
             if (bitmap != null) {
                 bLLBitmapManager.SetBitmap(bitmap);
-                App.ApplyFilters();
+                parentForm.ResetFilters();
                 Hide();
             }
         }
