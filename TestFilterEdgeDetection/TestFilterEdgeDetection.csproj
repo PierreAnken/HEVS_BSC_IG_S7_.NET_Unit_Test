@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="TestImageFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestExtBitmap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
