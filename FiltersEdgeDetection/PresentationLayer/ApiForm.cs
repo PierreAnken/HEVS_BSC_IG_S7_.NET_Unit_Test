@@ -15,6 +15,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
             InitializeComponent();
             this.parentForm = parentForm;
         }
+        
         public void SetErrorLabel(string error)
         {
             labelApiError.Text = error;
@@ -41,6 +42,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
                 parentForm.ResetFilters();
                 Hide();
             }
+            Toolbox.SetFormControlsEnabled(parentForm, true);
         }
     }
 }

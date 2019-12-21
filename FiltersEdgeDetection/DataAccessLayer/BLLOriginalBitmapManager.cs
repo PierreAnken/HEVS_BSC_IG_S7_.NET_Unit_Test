@@ -13,6 +13,7 @@ namespace DAL
         public void SetBitmap(Bitmap bitmap)
         {
             App.SetOriginalBitmap(bitmap);
+            App.ApplyFilters();
         }
     }
 }

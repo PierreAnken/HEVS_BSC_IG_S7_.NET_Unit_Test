@@ -95,6 +95,8 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.Controls.Add(this.buttonApiBack);
             this.Controls.Add(this.textBoxApiGetHash);
             this.Controls.Add(this.labelApiUrlGet);
+            this.MaximumSize = new System.Drawing.Size(380, 205);
+            this.MinimumSize = new System.Drawing.Size(380, 205);
             this.Name = "ApiForm";
             this.Text = "Load from API";
             this.Load += new System.EventHandler(this.ApiForm_Load);

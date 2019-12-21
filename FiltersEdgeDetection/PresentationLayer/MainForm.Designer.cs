@@ -157,6 +157,8 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.Controls.Add(this.comboBoxFilters);
             this.Controls.Add(this.title);
             this.Controls.Add(this.imgPreview);
+            this.MaximumSize = new System.Drawing.Size(686, 738);
+            this.MinimumSize = new System.Drawing.Size(686, 738);
             this.Name = "MainForm";
             this.Text = "Image manipulation";
             this.Load += new System.EventHandler(this.MainForm_Load);
