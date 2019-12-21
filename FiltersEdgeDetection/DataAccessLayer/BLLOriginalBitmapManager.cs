@@ -3,16 +3,16 @@ using System.Drawing;
 
 namespace DAL
 {
-    public class BLLBitmapManager : IBitmapManager
+    public class BLLOriginalBitmapManager : IBitmapManager
     {
         public Bitmap GetBitmap()
         {
-            return App.originaleImage;
+            return App.GetOriginalBitmap();
         }
 
         public void SetBitmap(Bitmap bitmap)
         {
-            App.originaleImage = bitmap;
+            App.SetOriginalBitmap(bitmap);
         }
     }
 }

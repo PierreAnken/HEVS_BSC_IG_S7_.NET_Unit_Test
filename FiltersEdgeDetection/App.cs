@@ -9,17 +9,36 @@ namespace FiltersEdgeDetection
 {
     static class App
     {
-        public static Bitmap originaleImage;
+        private static Bitmap originalBitmap, resultBitmap;
         public static MainForm mainForm;
+
+
+        public static Bitmap GetOriginalBitmap()
+        {
+            return originalBitmap;
+        }
+        public static Bitmap GetResultBitmap()
+        {
+            return resultBitmap;
+        }
+
+        public static void SetOriginalBitmap(Bitmap newOriginalBitmap)
+        {
+            originalBitmap = newOriginalBitmap;
+        }
+        public static void SetResultBitmap(Bitmap newResultBitmap)
+        {
+            resultBitmap = newResultBitmap;
+        }
 
         public static void ApplyFilters()
         {
-            if (originaleImage != null)
+            if (originalBitmap != null)
             {
                 ComboBox comboBoxEdge = mainForm.GetComboBoxEdge();
                 ComboBox comboBoxFilters = mainForm.GetComboBoxFilters();
                 Toolbox.SetFormControlsEnabled(mainForm, false);
-                Bitmap resultBitmap = new Bitmap(originaleImage);
+                resultBitmap = new Bitmap(originalBitmap);
 
                 // First apply filter
                 if (comboBoxFilters.SelectedItem != null)
@@ -67,9 +86,6 @@ namespace FiltersEdgeDetection
             }
         }
 
-        /// <summary>
-        /// Point d'entrée principal de l'application.
-        /// </summary>
         [STAThread]
         static void Main()
         {

@@ -61,31 +61,32 @@
   <ItemGroup>
     <Compile Include="BusinessLayer\ExtBitmap.cs" />
     <Compile Include="BusinessLayer\ImageFilter.cs" />
-    <Compile Include="DataAccessLayer\BllBitmapManager.cs" />
+    <Compile Include="DataAccessLayer\BLLResultBitmapManager.cs" />
+    <Compile Include="DataAccessLayer\BLLOriginalBitmapManager.cs" />
     <Compile Include="DataAccessLayer\MainFormBitmapManager.cs" />
     <Compile Include="DataAccessLayer\ImgurBitmapManager.cs" />
     <Compile Include="BusinessLayer\Matrix.cs" />
     <Compile Include="BusinessLayer\Toolbox.cs" />
     <Compile Include="DataAccessLayer\DiskBitmapManager.cs" />
     <Compile Include="DataAccessLayer\IBitmapManager.cs" />
-    <Compile Include="PrensentationLayer\ApiForm.cs">
+    <Compile Include="PresentationLayer\ApiForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PrensentationLayer\ApiForm.Designer.cs">
+    <Compile Include="PresentationLayer\ApiForm.Designer.cs">
       <DependentUpon>ApiForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrensentationLayer\MainForm.cs">
+    <Compile Include="PresentationLayer\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PrensentationLayer\MainForm.Designer.cs">
+    <Compile Include="PresentationLayer\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="App.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="PrensentationLayer\ApiForm.resx">
+    <EmbeddedResource Include="PresentationLayer\ApiForm.resx">
       <DependentUpon>ApiForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PrensentationLayer\MainForm.resx">
+    <EmbeddedResource Include="PresentationLayer\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

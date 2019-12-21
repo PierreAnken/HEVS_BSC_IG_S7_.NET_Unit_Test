@@ -9,7 +9,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
     public partial class ApiForm : Form
     {
         public MainForm parentForm;
-        private static readonly BLLBitmapManager bLLBitmapManager = new BLLBitmapManager();
+        private static readonly BLLOriginalBitmapManager bLLBitmapManager = new BLLOriginalBitmapManager();
         public ApiForm(MainForm parentForm)
         {
             InitializeComponent();

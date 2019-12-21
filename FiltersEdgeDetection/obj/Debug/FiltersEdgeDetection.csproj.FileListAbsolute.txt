@@ -1,15 +1,3 @@
-C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\FiltersEdgeDetection.exe.config
-C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\FiltersEdgeDetection.exe
-C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\FiltersEdgeDetection.pdb
-C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\Newtonsoft.Json.dll
-C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\Newtonsoft.Json.xml
-C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.PrensentationLayer.ApiForm.resources
-C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.PrensentationLayer.MainForm.resources
-C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.Properties.Resources.resources
-C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.csproj.GenerateResource.cache
-C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.csproj.CopyComplete
-C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.exe
-C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.pdb
 C:\Users\kenja\Git\HEVS\s7\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\FiltersEdgeDetection.exe.config
 C:\Users\kenja\Git\HEVS\s7\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\FiltersEdgeDetection.exe
 C:\Users\kenja\Git\HEVS\s7\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\FiltersEdgeDetection.pdb

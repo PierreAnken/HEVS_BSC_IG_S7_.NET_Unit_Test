@@ -8,6 +8,5 @@ namespace BLL
             foreach (Control control in form.Controls)
                 control.Enabled = enabled;
         }
-
     }
 }

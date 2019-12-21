@@ -2,6 +2,8 @@
 using DAL;
 using System;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Windows.Forms;
 
 namespace FiltersEdgeDetection.PrensentationLayer
@@ -9,7 +11,8 @@ namespace FiltersEdgeDetection.PrensentationLayer
 
     public partial class MainForm : Form
     {
-        private static readonly BLLBitmapManager bLLBitmapManager = new BLLBitmapManager();
+        private static readonly BLLOriginalBitmapManager bLLOriginalBitmapManager = new BLLOriginalBitmapManager();
+        private static readonly BLLResultBitmapManager bLLResultBitmapManager = new BLLResultBitmapManager();
         private MainFormBitmapManager mainFormBitmapManager;
         private static ApiForm apiForm;
 
@@ -76,15 +79,34 @@ namespace FiltersEdgeDetection.PrensentationLayer
                 {
                     IBitmapManager imageManager = new DiskBitmapManager(ofd.FileName);
                     Bitmap imgurBitmap = imageManager.GetBitmap();
-                    bLLBitmapManager.SetBitmap(imgurBitmap);
+                    bLLOriginalBitmapManager.SetBitmap(imgurBitmap);
                     imgPreview.Image = ExtBitmap.AdaptToSquareCanvas(imgurBitmap, imgPreview.Width);
+                    App.ApplyFilters();
                 }
             }
         }
 
         private void buttonSaveDisk_Click(object sender, EventArgs e)
         {
-                //todo save to disk          
+            Bitmap resultBitmap = bLLResultBitmapManager.GetBitmap();
+            if (resultBitmap != null)
+            {
+                using (SaveFileDialog sfd = new SaveFileDialog())
+                {
+                    sfd.Title = "Specify a file name and file path";
+                    sfd.Filter = "Jpeg Images(*.jpg)|*.jpg";
+
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        string fileExtension = Path.GetExtension(sfd.FileName).ToUpper();
+                        ImageFormat imgFormat = ImageFormat.Jpeg;
+                        StreamWriter streamWriter = new StreamWriter(sfd.FileName, false);
+                        resultBitmap.Save(streamWriter.BaseStream, imgFormat);
+                        streamWriter.Flush();
+                        streamWriter.Close();
+                    }
+                }
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
