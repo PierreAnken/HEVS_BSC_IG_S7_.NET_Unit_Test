@@ -12,6 +12,8 @@ namespace TestFilterEdgeDetection
     public class TestImageFilter
     {
         readonly Bitmap landscapeImage = new Bitmap(Path.Combine(Environment.CurrentDirectory, @"data\", "landscape.jpg"));
+        readonly Bitmap overviewImage = new Bitmap(Path.Combine(Environment.CurrentDirectory, @"data\", "overview.jpg"));
+
 
         [TestMethod]
         public void TestGetColorFromBuffer()
@@ -80,6 +82,14 @@ namespace TestFilterEdgeDetection
             Bitmap bitmapImage = ImageFilters.ApplyFilterMagicMosaic(landscapeImage);
 
             Assert.AreEqual(ImageFilters.BitmapToHash(bitmapImage), "101177507524714316166112214483255124253217");
+        }
+
+        [TestMethod]
+        public void TestApplyFilterMagicMosaicWithOverviewImage()
+        {
+            Bitmap bitmapImage = ImageFilters.ApplyFilterMagicMosaic(overviewImage);
+
+            Assert.AreEqual(ImageFilters.BitmapToHash(bitmapImage), "12766107161561087232146160174559524617859");
         }
 
         [TestMethod]
