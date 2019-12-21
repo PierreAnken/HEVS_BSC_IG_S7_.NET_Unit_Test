@@ -4,7 +4,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PictureBox.Image.Testes;
+using BLL;
 
 namespace TestFilterEdgeDetection
 {
