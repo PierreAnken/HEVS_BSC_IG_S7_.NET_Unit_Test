@@ -10,20 +10,20 @@ using System.Net.Http.Headers;
 
 namespace FiltersEdgeDetection.classes
 {
-    class ApiImgurImage : IImageManager
+    class ImgurBitmapManager : IBitmapManager
     {
         private static readonly string CLIENTID = "ec26fa431d0e2b9";
         private static readonly string APIBASEURL = "https://api.imgur.com/3/";
         private readonly string imageHash;
         private readonly ApiForm form;
         
-        public ApiImgurImage(string imageHash, ApiForm form)
+        public ImgurBitmapManager(string imageHash, ApiForm form)
         {
             this.imageHash = imageHash;
             this.form = form;
         }
 
-        public Bitmap LoadImage()
+        public Bitmap GetBitmap()
         {
             Bitmap bitmap = null;
             string apiUrl = APIBASEURL + "image/" + imageHash;
@@ -61,9 +61,9 @@ namespace FiltersEdgeDetection.classes
             return bitmap;
         }
 
-        public void SaveImage(Bitmap img)
+        public void SetBitmap(Bitmap img)
         {
-
+            throw new NotImplementedException();
         }
     }
 }

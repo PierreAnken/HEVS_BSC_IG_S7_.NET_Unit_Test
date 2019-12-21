@@ -50,10 +50,10 @@ namespace FiltersEdgeDetection.PrensentationLayer
         private void buttonGetPost_Click(object sender, EventArgs e) {
 
             string hash = textBoxApiGetHash.Text;
-            ApiImgurImage apiImgurImage = new ApiImgurImage(hash,this);
+            ImgurBitmapManager apiImgurImage = new ImgurBitmapManager(hash,this);
             if (isGet)
             {
-                Bitmap image = apiImgurImage.LoadImage();
+                Bitmap image = apiImgurImage.GetBitmap();
 
                 if (image != null) {
                     parentForm.SetOriginalBitmap(image);

@@ -119,11 +119,11 @@ namespace FiltersEdgeDetection.PrensentationLayer
                 ofd.Filter = "Png Images(*.png)|*.png|Jpeg Images(*.jpg)|*.jpg";
                 ofd.Filter += "|Bitmap Images(*.bmp)|*.bmp";
 
-                IImageManager imageManager = new LocalImage(ofd.FileName);
+                IBitmapManager imageManager = new DiskBitmapManager(ofd.FileName);
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    originalBitmap = imageManager.LoadImage();
+                    originalBitmap = imageManager.GetBitmap();
                     imgPreview.Image = ExtBitmap.AdaptToSquareCanvas(originalBitmap, imgPreview.Width);
                     ApplyFilters();
                 }

@@ -4,24 +4,24 @@ using System.IO;
 
 namespace FiltersEdgeDetection.classes
 {
-    class LocalImage : IImageManager
+    class DiskBitmapManager : IBitmapManager
     {
-        readonly string path;
+        readonly string diskPath;
 
-        public LocalImage(string path) {
-            this.path = path;
+        public DiskBitmapManager(string diskPath) {
+            this.diskPath = diskPath;
         }
 
-        public Bitmap LoadImage()
+        public Bitmap GetBitmap()
         {
-            StreamReader streamReader = new StreamReader(path);
+            StreamReader streamReader = new StreamReader(diskPath);
             Bitmap  originalBitmap = (Bitmap)Image.FromStream(streamReader.BaseStream);
             streamReader.Close();
 
             return originalBitmap;
         }
 
-        public void SaveImage(Bitmap img)
+        public void SetBitmap(Bitmap img)
         {
 
         }

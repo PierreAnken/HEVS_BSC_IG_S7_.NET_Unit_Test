@@ -51,11 +51,11 @@
   <ItemGroup>
     <Compile Include="BusinessLayer\ExtBitmap.cs" />
     <Compile Include="BusinessLayer\ImageFilter.cs" />
-    <Compile Include="BusinessLayer\ApiImgurImage.cs" />
+    <Compile Include="Interfaces\ImgurBitmapManager.cs" />
     <Compile Include="BusinessLayer\Matrix.cs" />
     <Compile Include="BusinessLayer\Toolbox.cs" />
-    <Compile Include="BusinessLayer\LocalImage.cs" />
-    <Compile Include="Interfaces\IImageManager.cs" />
+    <Compile Include="Interfaces\DiskBitmapManager.cs" />
+    <Compile Include="Interfaces\IBitmapManager.cs" />
     <Compile Include="PrensentationLayer\ApiForm.cs">
       <SubType>Form</SubType>
     </Compile>
