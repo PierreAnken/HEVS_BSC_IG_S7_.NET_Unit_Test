@@ -103,9 +103,9 @@ namespace TestFilterEdgeDetection
         [TestMethod]
         public void TestApplyBlackWhite()
         {
-            Bitmap bitmapImage = ImageFilters.ApplyBlackWhite(landscapeImage);
+            Bitmap bitmapImage = ImageFilters.ApplyBlackWhite(ExtBitmap.AdaptToSquareCanvas(landscapeImage, 100));
 
-            Assert.AreEqual(ImageFilters.BitmapToHash(bitmapImage), "101177507524714316166112214483255124253217");
+            Assert.AreEqual(ImageFilters.BitmapToHash(bitmapImage), "187964318113824411115124989611381568314520");
         }
 
 
