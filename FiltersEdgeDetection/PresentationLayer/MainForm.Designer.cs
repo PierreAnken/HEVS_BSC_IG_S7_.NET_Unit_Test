@@ -89,7 +89,6 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.labelFilters.TabIndex = 4;
             this.labelFilters.Text = "Filters";
             this.labelFilters.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelFilters.Click += new System.EventHandler(this.label1_Click);
             // 
             // label1
             // 
@@ -99,7 +98,6 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.label1.TabIndex = 5;
             this.label1.Text = "Edge Detection";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // buttonLoadDisk
             // 
@@ -130,7 +128,6 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.title.TabIndex = 1;
             this.title.Text = "Image manipulation V1.0";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.title.Click += new System.EventHandler(this.title_Click);
             // 
             // buttonLoadImgur
             // 
@@ -161,7 +158,6 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.MinimumSize = new System.Drawing.Size(686, 738);
             this.Name = "MainForm";
             this.Text = "Image manipulation";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgPreview)).EndInit();
             this.ResumeLayout(false);
 

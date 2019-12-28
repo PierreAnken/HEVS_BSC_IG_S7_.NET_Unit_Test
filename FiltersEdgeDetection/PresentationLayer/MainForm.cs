@@ -53,29 +53,11 @@ namespace FiltersEdgeDetection.PrensentationLayer
             return imgPreview;
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void title_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
         private void buttonLoadImgur_Click(object sender, EventArgs e)
         {
             apiForm.Show();
         }
+
         private void buttonLoadDisk_Click(object sender, EventArgs e)
         {
             IBitmapManager diskBitmapManager = new DiskBitmapManager();
