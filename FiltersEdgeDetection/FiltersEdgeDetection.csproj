@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\ExtBitmap.cs" />
+    <Compile Include="BusinessLayer\ImageManagement.cs" />
     <Compile Include="BusinessLayer\ImageFilter.cs" />
     <Compile Include="DataAccessLayer\BLLResultBitmapManager.cs" />
     <Compile Include="DataAccessLayer\BLLOriginalBitmapManager.cs" />

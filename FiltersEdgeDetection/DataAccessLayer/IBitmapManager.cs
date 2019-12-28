@@ -2,7 +2,7 @@
 
 namespace DAL
 {
-    interface IBitmapManager
+    public interface IBitmapManager
     {
         Bitmap GetBitmap();
         void SetBitmap(Bitmap bitmap);

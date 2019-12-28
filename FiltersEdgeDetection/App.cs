@@ -11,6 +11,7 @@ namespace FiltersEdgeDetection
     {
         private static Bitmap originalBitmap, resultBitmap;
         public static MainForm mainForm;
+        public static ImageManagement imageManagement = new ImageManagement();
 
 
         public static Bitmap GetOriginalBitmap()

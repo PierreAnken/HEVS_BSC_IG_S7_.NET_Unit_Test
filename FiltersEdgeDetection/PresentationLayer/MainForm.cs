@@ -16,6 +16,8 @@ namespace FiltersEdgeDetection.PrensentationLayer
         private MainFormBitmapManager mainFormBitmapManager;
         private static ApiForm apiForm;
 
+        //private ImageManagement imageManagement = new ImageManagement();
+
         public MainForm()
         {
             InitializeComponent();
@@ -76,41 +78,20 @@ namespace FiltersEdgeDetection.PrensentationLayer
         }
         private void buttonLoadDisk_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog()) {
-                ofd.Title = "Select an image file.";
-                ofd.Filter = "Jpeg Images(*.jpg)|*.jpg|Bitmap Images(*.bmp)|*.bmp";
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    IBitmapManager imageManager = new DiskBitmapManager(ofd.FileName);
-                    Bitmap imgurBitmap = imageManager.GetBitmap();
-                    bLLOriginalBitmapManager.SetBitmap(imgurBitmap);
-                    imgPreview.Image = ExtBitmap.AdaptToSquareCanvas(imgurBitmap, imgPreview.Width);
-                    ResetFilters();
-                }
-            }
+            IBitmapManager diskBitmapManager = new DiskBitmapManager();
+
+            Bitmap bitmap = App.imageManagement.LoadImage(diskBitmapManager, imgPreview.Width);
+
+            bLLOriginalBitmapManager.SetBitmap(bitmap);
+            imgPreview.Image = bitmap;
+            ResetFilters();
         }
 
         private void buttonSaveDisk_Click(object sender, EventArgs e)
         {
-            Bitmap resultBitmap = bLLResultBitmapManager.GetBitmap();
-            if (resultBitmap != null)
-            {
-                using (SaveFileDialog sfd = new SaveFileDialog())
-                {
-                    sfd.Title = "Specify a file name and file path";
-                    sfd.Filter = "Jpeg Images(*.jpg)|*.jpg";
+            IBitmapManager diskBitmapManager = new DiskBitmapManager();
 
-                    if (sfd.ShowDialog() == DialogResult.OK)
-                    {
-                        string fileExtension = Path.GetExtension(sfd.FileName).ToUpper();
-                        ImageFormat imgFormat = ImageFormat.Jpeg;
-                        StreamWriter streamWriter = new StreamWriter(sfd.FileName, false);
-                        resultBitmap.Save(streamWriter.BaseStream, imgFormat);
-                        streamWriter.Flush();
-                        streamWriter.Close();
-                    }
-                }
-            }
+            App.imageManagement.SaveImage(diskBitmapManager, bLLResultBitmapManager.GetBitmap());
         }
 
         private void label2_Click(object sender, EventArgs e)
