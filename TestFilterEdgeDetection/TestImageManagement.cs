@@ -21,8 +21,8 @@ namespace TestFilterEdgeDetection
 
             ibitmapManager.GetBitmap().Returns(landscapeImage);
 
-            ImageManagement foo = new ImageManagement();
-            Bitmap bitmap = foo.LoadImage(ibitmapManager, 200);
+            ImageManagement imageManagement = new ImageManagement();
+            Bitmap bitmap = imageManagement.LoadImage(ibitmapManager, 200);
 
             Assert.AreEqual("95981363415123963124134142051385511793", ImageFilters.BitmapToHash(bitmap));
         }
@@ -34,10 +34,10 @@ namespace TestFilterEdgeDetection
 
             ibitmapManager.SetBitmap(landscapeImage);
 
-            ImageManagement foo = new ImageManagement();
+            ImageManagement imageManagement = new ImageManagement();
             try
             {
-                foo.SaveImage(ibitmapManager, landscapeImage);
+                imageManagement.SaveImage(ibitmapManager, landscapeImage);
                 Assert.IsTrue(true);
             }
             catch
