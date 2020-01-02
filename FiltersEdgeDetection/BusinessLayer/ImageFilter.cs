@@ -14,7 +14,7 @@ namespace BLL
         {
             byte[] pixelBuffer = BitmapToByteArray(bmp, ref bitmapData);
 
-            Color c0,c1,c2;
+            Color c0, c1, c2;
 
             for (int x = 0; x < bitmapData.Width; ++x)
             {
@@ -22,12 +22,13 @@ namespace BLL
                 {
                     int pixelIndex = y * bitmapData.Stride + x * 4;
 
-                    if(pixelIndex < pixelBuffer.Length) {
+                    if (pixelIndex < pixelBuffer.Length)
+                    {
 
-                        c0 = GetColorFromBuffer(pixelBuffer,pixelIndex);
-                        c1 = Color.FromArgb(c0.A, c0.G/2, c0.B, c0.R);
+                        c0 = GetColorFromBuffer(pixelBuffer, pixelIndex);
+                        c1 = Color.FromArgb(c0.A, c0.G / 2, c0.B, c0.R);
                         c2 = Color.FromArgb(c1.A, c1.G, c1.B, c1.R);
-                        SetPixel(pixelBuffer,pixelIndex, c2);
+                        SetPixel(pixelBuffer, pixelIndex, c2);
 
                     }
                 }
@@ -43,7 +44,7 @@ namespace BLL
         {
             byte[] pixelBuffer = BitmapToByteArray(bmp, ref bitmapData);
             int rgb;
-            Color c0,c1;
+            Color c0, c1;
 
             for (int y = 0; y < bitmapData.Height; y++)
                 for (int x = 0; x < bitmapData.Width; x++)
@@ -70,7 +71,8 @@ namespace BLL
             return Color.FromArgb(alpha, red, green, blue);
         }
 
-        public static void SetPixel(byte[] pixelBuffer, int index, Color color) {
+        public static void SetPixel(byte[] pixelBuffer, int index, Color color)
+        {
             // BGRA
             pixelBuffer[index] = color.B;
             pixelBuffer[index + 1] = color.G;
@@ -78,9 +80,10 @@ namespace BLL
             pixelBuffer[index + 3] = color.A;
         }
 
-        public static int GetArea(int x, int y, int limitX, int limitY) {
+        public static int GetArea(int x, int y, int limitX, int limitY)
+        {
 
-            int areaX = x / limitX +1;
+            int areaX = x / limitX + 1;
             int areaY = y / limitY;
             int area = areaY * 3 + areaX;
 
@@ -90,14 +93,16 @@ namespace BLL
             return area;
         }
 
-        public static byte[] BitmapToByteArray(Bitmap image, ref BitmapData bitmapData1) {
+        public static byte[] BitmapToByteArray(Bitmap image, ref BitmapData bitmapData1)
+        {
             bitmapData1 = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadWrite, image.PixelFormat);
             byte[] pixelBuffer = new byte[bitmapData1.Stride * bitmapData1.Height];
             Marshal.Copy(bitmapData1.Scan0, pixelBuffer, 0, pixelBuffer.Length);
             return pixelBuffer;
         }
 
-        public static string BitmapToHash(Bitmap image) {
+        public static string BitmapToHash(Bitmap image)
+        {
 
             BitmapData bitmapData = null;
             byte[] pixelBuffer = BitmapToByteArray(image, ref bitmapData);
@@ -125,7 +130,7 @@ namespace BLL
             byte[] pixelBufferSource = BitmapToByteArray(bmp, ref bitmapData);
             byte[] pixelBufferResult = BitmapToByteArray(result, ref bitmapResult);
 
-            int pixelSource,pixelDestination;
+            int pixelSource, pixelDestination;
             int workingArea;
 
             for (int x = 0; x < bmp.Width; ++x)
@@ -137,7 +142,8 @@ namespace BLL
                     pixelSource = -1;
                     workingArea = GetArea(x, y, razX, razY);
 
-                    switch (workingArea) {
+                    switch (workingArea)
+                    {
                         case 1:
                         case 3:
                         case 5:
@@ -146,14 +152,14 @@ namespace BLL
                             break;
                         case 2:
                         case 4:
-                            pixelSource =  x * bitmapData.Stride + y * 4;
+                            pixelSource = x * bitmapData.Stride + y * 4;
                             break;
                         case 8:
                         case 9:
                             pixelSource = x / 3 * bitmapData.Stride + y / 3 * 4;
                             break;
                         case 6:
-                            pixelSource =  x / 2 * bitmapData.Stride + y / 2 * 4;
+                            pixelSource = x / 2 * bitmapData.Stride + y / 2 * 4;
                             break;
                     }
 

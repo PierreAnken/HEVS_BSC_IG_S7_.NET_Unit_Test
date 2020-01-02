@@ -1,6 +1,6 @@
 ﻿using BLL;
 
-namespace FiltersEdgeDetection.PrensentationLayer
+namespace PL
 {
     partial class ApiForm
     {
@@ -15,7 +15,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if(parentForm != null)
+            if (parentForm != null)
                 Toolbox.SetFormControlsEnabled(parentForm, true);
 
             if (disposing && (components != null))

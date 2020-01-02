@@ -4,7 +4,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace FiltersEdgeDetection.PrensentationLayer
+namespace PL
 {
     public partial class ApiForm : Form
     {
@@ -15,7 +15,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
             InitializeComponent();
             this.parentForm = parentForm;
         }
-        
+
         public void SetErrorLabel(string error)
         {
             labelApiError.Text = error;
@@ -31,13 +31,15 @@ namespace FiltersEdgeDetection.PrensentationLayer
             Hide();
         }
 
-        private void buttonGet_Click(object sender, EventArgs e) {
+        private void buttonGet_Click(object sender, EventArgs e)
+        {
             Toolbox.SetFormControlsEnabled(parentForm, false);
             string hash = textBoxApiGetHash.Text;
-            ImgurBitmapManager apiImgurImage = new ImgurBitmapManager(hash,this);
+            ImgurBitmapManager apiImgurImage = new ImgurBitmapManager(hash, this);
             Bitmap bitmap = apiImgurImage.GetBitmap();
 
-            if (bitmap != null) {
+            if (bitmap != null)
+            {
                 bLLBitmapManager.SetBitmap(bitmap);
                 parentForm.ResetFilters();
                 Hide();

@@ -1,6 +1,6 @@
 ﻿using BLL;
 using DAL;
-using FiltersEdgeDetection.PrensentationLayer;
+using PL;
 using System;
 using System.Drawing;
 using System.Windows.Forms;

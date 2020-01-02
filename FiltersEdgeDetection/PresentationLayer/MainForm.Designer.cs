@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace FiltersEdgeDetection.PrensentationLayer
+namespace PL
 {
     partial class MainForm
     {
@@ -101,22 +101,24 @@ namespace FiltersEdgeDetection.PrensentationLayer
             // 
             // buttonLoadDisk
             // 
+            this.buttonLoadDisk.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonLoadDisk.Location = new System.Drawing.Point(227, 625);
             this.buttonLoadDisk.Name = "buttonLoadDisk";
             this.buttonLoadDisk.Size = new System.Drawing.Size(123, 35);
             this.buttonLoadDisk.TabIndex = 6;
             this.buttonLoadDisk.Text = "Load from disk";
-            this.buttonLoadDisk.UseVisualStyleBackColor = true;
+            this.buttonLoadDisk.UseVisualStyleBackColor = false;
             this.buttonLoadDisk.Click += new System.EventHandler(this.buttonLoadDisk_Click);
             // 
             // buttonSaveDisk
             // 
+            this.buttonSaveDisk.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonSaveDisk.Location = new System.Drawing.Point(477, 625);
             this.buttonSaveDisk.Name = "buttonSaveDisk";
             this.buttonSaveDisk.Size = new System.Drawing.Size(110, 35);
             this.buttonSaveDisk.TabIndex = 6;
             this.buttonSaveDisk.Text = "Save to disk";
-            this.buttonSaveDisk.UseVisualStyleBackColor = true;
+            this.buttonSaveDisk.UseVisualStyleBackColor = false;
             this.buttonSaveDisk.Click += new System.EventHandler(this.buttonSaveDisk_Click);
             // 
             // title
@@ -128,15 +130,17 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.title.TabIndex = 1;
             this.title.Text = "Image manipulation V1.0";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.title.Click += new System.EventHandler(this.title_Click);
             // 
             // buttonLoadImgur
             // 
+            this.buttonLoadImgur.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonLoadImgur.Location = new System.Drawing.Point(86, 625);
             this.buttonLoadImgur.Name = "buttonLoadImgur";
             this.buttonLoadImgur.Size = new System.Drawing.Size(123, 35);
             this.buttonLoadImgur.TabIndex = 6;
             this.buttonLoadImgur.Text = "Load from imgur";
-            this.buttonLoadImgur.UseVisualStyleBackColor = true;
+            this.buttonLoadImgur.UseVisualStyleBackColor = false;
             this.buttonLoadImgur.Click += new System.EventHandler(this.buttonLoadImgur_Click);
             // 
             // MainForm
@@ -158,6 +162,7 @@ namespace FiltersEdgeDetection.PrensentationLayer
             this.MinimumSize = new System.Drawing.Size(686, 738);
             this.Name = "MainForm";
             this.Text = "Image manipulation";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgPreview)).EndInit();
             this.ResumeLayout(false);
 
@@ -165,14 +170,14 @@ namespace FiltersEdgeDetection.PrensentationLayer
 
         #endregion
 
-        private System.Windows.Forms.PictureBox imgPreview;
-        private System.Windows.Forms.ComboBox comboBoxFilters;
-        private System.Windows.Forms.ComboBox comboBoxEdge;
-        private System.Windows.Forms.Label labelFilters;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonLoadDisk;
-        private System.Windows.Forms.Button buttonSaveDisk;
-        private System.Windows.Forms.Label title;
-        private System.Windows.Forms.Button buttonLoadImgur;
+        public System.Windows.Forms.PictureBox imgPreview;
+        public System.Windows.Forms.ComboBox comboBoxFilters;
+        public System.Windows.Forms.ComboBox comboBoxEdge;
+        public System.Windows.Forms.Label labelFilters;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button buttonLoadDisk;
+        public System.Windows.Forms.Button buttonSaveDisk;
+        public System.Windows.Forms.Label title;
+        public System.Windows.Forms.Button buttonLoadImgur;
     }
 }

@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DAL;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BLL;
-using DAL;
-using FiltersEdgeDetection.PrensentationLayer;
 
 namespace BLL
 {

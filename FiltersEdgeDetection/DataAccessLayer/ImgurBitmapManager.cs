@@ -1,5 +1,5 @@
-﻿using FiltersEdgeDetection.PrensentationLayer;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
+using PL;
 using System;
 using System.Drawing;
 using System.IO;
@@ -13,7 +13,7 @@ namespace DAL
         private static readonly string APIBASEURL = "https://api.imgur.com/3/";
         private readonly string imageHash;
         private readonly ApiForm form;
-        
+
         public ImgurBitmapManager(string imageHash, ApiForm form)
         {
             this.imageHash = imageHash;
@@ -44,7 +44,8 @@ namespace DAL
                             bitmap = new Bitmap(stream);
                         }
                     }
-                    else {
+                    else
+                    {
                         error = "Invalid hash";
                     }
                 }

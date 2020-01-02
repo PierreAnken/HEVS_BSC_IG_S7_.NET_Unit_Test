@@ -1,12 +1,10 @@
-﻿using BLL;
-using DAL;
+﻿using DAL;
+using FiltersEdgeDetection;
 using System;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
 using System.Windows.Forms;
 
-namespace FiltersEdgeDetection.PrensentationLayer
+namespace PL
 {
 
     public partial class MainForm : Form
@@ -25,7 +23,8 @@ namespace FiltersEdgeDetection.PrensentationLayer
             mainFormBitmapManager = new MainFormBitmapManager(this);
         }
 
-        public void ResetFilters() {
+        public void ResetFilters()
+        {
             comboBoxEdge.SelectedItem = "";
             comboBoxFilters.SelectedItem = "";
         }
@@ -55,25 +54,37 @@ namespace FiltersEdgeDetection.PrensentationLayer
 
         private void buttonLoadImgur_Click(object sender, EventArgs e)
         {
+            buttonSaveDisk.BackColor = buttonLoadImgur.BackColor = buttonLoadDisk.BackColor = Color.Gainsboro;
             apiForm.Show();
         }
 
         private void buttonLoadDisk_Click(object sender, EventArgs e)
         {
+            buttonSaveDisk.BackColor = buttonLoadImgur.BackColor = buttonLoadDisk.BackColor = Color.Gainsboro;
             IBitmapManager diskBitmapManager = new DiskBitmapManager();
 
             Bitmap bitmap = App.imageManagement.LoadImage(diskBitmapManager, imgPreview.Width);
-
-            bLLOriginalBitmapManager.SetBitmap(bitmap);
-            imgPreview.Image = bitmap;
-            ResetFilters();
+            if (bitmap != null)
+            {
+                bLLOriginalBitmapManager.SetBitmap(bitmap);
+                imgPreview.Image = bitmap;
+                ResetFilters();
+            }
         }
 
         private void buttonSaveDisk_Click(object sender, EventArgs e)
         {
-            IBitmapManager diskBitmapManager = new DiskBitmapManager();
-
-            App.imageManagement.SaveImage(diskBitmapManager, bLLResultBitmapManager.GetBitmap());
+            Bitmap image = bLLResultBitmapManager.GetBitmap();
+            if (image == null)
+            {
+                buttonSaveDisk.BackColor = Color.Red;
+                buttonLoadImgur.BackColor = buttonLoadDisk.BackColor = Color.LightGreen;
+            }
+            else
+            {
+                IBitmapManager diskBitmapManager = new DiskBitmapManager();
+                App.imageManagement.SaveImage(diskBitmapManager, image);
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -99,6 +110,16 @@ namespace FiltersEdgeDetection.PrensentationLayer
         private void comboBoxEdge_SelectedIndexChanged(object sender, EventArgs e)
         {
             App.ApplyFilters();
+        }
+
+        private void title_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

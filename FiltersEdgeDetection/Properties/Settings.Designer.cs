@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FiltersEdgeDetection.Properties
+namespace PL
 {
 
 

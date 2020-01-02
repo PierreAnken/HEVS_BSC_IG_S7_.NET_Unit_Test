@@ -28,10 +28,10 @@ C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\Newtonsoft.Json.xml
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\NSubstitute.xml
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.csprojAssemblyReference.cache
-C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.PrensentationLayer.ApiForm.resources
-C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.PrensentationLayer.MainForm.resources
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.Properties.Resources.resources
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.csproj.GenerateResource.cache
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.csproj.CopyComplete
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.exe
 C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\FiltersEdgeDetection.pdb
+C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\PL.ApiForm.resources
+C:\Pierre\Repos\625_1_H19_PK\FiltersEdgeDetection\obj\Debug\PL.MainForm.resources

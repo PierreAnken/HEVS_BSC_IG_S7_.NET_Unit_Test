@@ -7,9 +7,9 @@ namespace BLL
         {
             get
             {
-                return new double[,]  
-                { { -1, -1, -1,  }, 
-                  { -1,  8, -1,  }, 
+                return new double[,]
+                { { -1, -1, -1,  },
+                  { -1,  8, -1,  },
                   { -1, -1, -1,  }, };
             }
         }
@@ -18,9 +18,9 @@ namespace BLL
         {
             get
             {
-                return new double[,] 
-                { { -1,  0,  1, }, 
-                  { -1,  0,  1, }, 
+                return new double[,]
+                { { -1,  0,  1, },
+                  { -1,  0,  1, },
                   { -1,  0,  1, }, };
             }
         }
@@ -29,9 +29,9 @@ namespace BLL
         {
             get
             {
-                return new double[,] 
-                { {  1,  1,  1, }, 
-                  {  0,  0,  0, }, 
+                return new double[,]
+                { {  1,  1,  1, },
+                  {  0,  0,  0, },
                   { -1, -1, -1, }, };
             }
         }
@@ -41,9 +41,9 @@ namespace BLL
         {
             get
             {
-                return new double[,] 
-                { {  5,  5,  5, }, 
-                  { -3,  0, -3, }, 
+                return new double[,]
+                { {  5,  5,  5, },
+                  { -3,  0, -3, },
                   { -3, -3, -3, }, };
             }
         }
@@ -52,9 +52,9 @@ namespace BLL
         {
             get
             {
-                return new double[,] 
-                { {  5, -3, -3, }, 
-                  {  5,  0, -3, }, 
+                return new double[,]
+                { {  5, -3, -3, },
+                  {  5,  0, -3, },
                   {  5, -3, -3, }, };
             }
         }

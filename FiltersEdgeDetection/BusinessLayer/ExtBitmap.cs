@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
-using System.Drawing.Drawing2D;
 
 namespace BLL
 {
@@ -53,7 +53,8 @@ namespace BLL
             sourceBitmap.UnlockBits(sourceData);
 
             int filterOffset = 1;
-            if(oneMatrixMode){
+            if (oneMatrixMode)
+            {
                 int filterWidth = xFilterMatrix.GetLength(1);
                 filterOffset = (filterWidth - 1) / 2;
             }
@@ -64,17 +65,17 @@ namespace BLL
             {
                 for (int offsetX = filterOffset; offsetX <
                     sourceBitmap.Width - filterOffset; offsetX++)
-                { 
+                {
                     double greenX = 0, redX = 0, blueX = 0;
                     double greenY = 0, redY = 0, blueY = 0;
 
-                    int byteOffset = offsetY *sourceData.Stride +offsetX * 4;
+                    int byteOffset = offsetY * sourceData.Stride + offsetX * 4;
 
-                    for (int filterY = -filterOffset;filterY <= filterOffset; filterY++)
+                    for (int filterY = -filterOffset; filterY <= filterOffset; filterY++)
                     {
-                        for (int filterX = -filterOffset;filterX <= filterOffset; filterX++)
+                        for (int filterX = -filterOffset; filterX <= filterOffset; filterX++)
                         {
-                            int calcOffset = byteOffset + (filterX * 4) +  (filterY * sourceData.Stride);
+                            int calcOffset = byteOffset + (filterX * 4) + (filterY * sourceData.Stride);
                             blueX += pixelBuffer[calcOffset] *
                                       xFilterMatrix[filterY + filterOffset,
                                               filterX + filterOffset];
@@ -87,7 +88,8 @@ namespace BLL
                                       xFilterMatrix[filterY + filterOffset,
                                               filterX + filterOffset];
 
-                            if(!oneMatrixMode){
+                            if (!oneMatrixMode)
+                            {
                                 blueY += pixelBuffer[calcOffset] *
                                           yFilterMatrix[filterY + filterOffset,
                                                   filterX + filterOffset];
@@ -147,7 +149,8 @@ namespace BLL
             value = (value < 0) ? 0 : (value > 255) ? 255 : value;
         }
 
-        public static Bitmap LaplacianFilter(this Bitmap sourceBitmap, double[,] matrix){
+        public static Bitmap LaplacianFilter(this Bitmap sourceBitmap, double[,] matrix)
+        {
             return ConvolutionFilter(sourceBitmap, matrix, null, 0, 1.0);
         }
 

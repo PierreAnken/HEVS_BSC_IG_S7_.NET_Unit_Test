@@ -1,5 +1,5 @@
 ﻿using BLL;
-using FiltersEdgeDetection.PrensentationLayer;
+using PL;
 using System;
 using System.Drawing;
 
@@ -8,7 +8,7 @@ namespace DAL
     public class MainFormBitmapManager : IBitmapManager
     {
         private readonly MainForm mainForm;
-        
+
         public MainFormBitmapManager(MainForm mainForm)
         {
             this.mainForm = mainForm;
