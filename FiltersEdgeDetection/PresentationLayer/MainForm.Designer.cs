@@ -52,6 +52,7 @@ namespace PL
             this.imgPreview.Size = new System.Drawing.Size(501, 401);
             this.imgPreview.TabIndex = 0;
             this.imgPreview.TabStop = false;
+            this.imgPreview.Click += new System.EventHandler(this.imgPreview_Click_1);
             // 
             // comboBoxFilters
             // 

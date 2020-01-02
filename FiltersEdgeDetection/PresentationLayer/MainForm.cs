@@ -121,5 +121,10 @@ namespace PL
         {
 
         }
+
+        private void imgPreview_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
