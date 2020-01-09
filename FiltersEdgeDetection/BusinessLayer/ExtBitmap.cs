@@ -10,6 +10,9 @@ namespace BLL
     {
         public static Bitmap AdaptToSquareCanvas(this Bitmap sourceBitmap, int canvasWidthLenght)
         {
+            if (sourceBitmap == null)
+                return null;
+
             int maxSide = sourceBitmap.Width > sourceBitmap.Height ?
                           sourceBitmap.Width : sourceBitmap.Height;
 
