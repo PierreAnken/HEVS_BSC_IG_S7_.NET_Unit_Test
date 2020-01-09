@@ -1,11 +1,10 @@
-﻿using System;
+﻿using BLL;
+using DAL;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
-using DAL;
+using System;
 using System.Drawing;
 using System.IO;
-using BLL;
-using FiltersEdgeDetection.PrensentationLayer;
 
 namespace TestFilterEdgeDetection
 {
@@ -28,6 +27,16 @@ namespace TestFilterEdgeDetection
         }
 
         [TestMethod]
+        public void TestLoadImageException()
+        {
+            var ibitmapManager = Substitute.For<IBitmapManager>();
+            ibitmapManager.GetBitmap().Returns(x => { throw new Exception(); });
+
+            ImageManagement imageManagement = new ImageManagement();
+            Assert.ThrowsException<Exception>(() => imageManagement.LoadImage(ibitmapManager, 200));
+        }
+
+        [TestMethod]
         public void TestSaveImage()
         {
             var ibitmapManager = Substitute.For<IBitmapManager>();
@@ -45,6 +54,5 @@ namespace TestFilterEdgeDetection
                 Assert.IsTrue(false);
             }
         }
-
     }
 }

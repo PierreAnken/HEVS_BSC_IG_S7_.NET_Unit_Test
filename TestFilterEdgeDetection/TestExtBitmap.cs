@@ -1,8 +1,8 @@
-﻿using System.Drawing;
-using System.IO;
+﻿using BLL;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using BLL;
+using System.Drawing;
+using System.IO;
 
 namespace TestFilterEdgeDetection
 {
@@ -43,8 +43,8 @@ namespace TestFilterEdgeDetection
         [TestMethod]
         public void TestPrewitt()
         {
-            Bitmap bitmap = ExtBitmap.DoubleMatrixFilter(landscapeImage, 
-                                                      Matrix.Prewitt3x3Horizontal, 
+            Bitmap bitmap = ExtBitmap.DoubleMatrixFilter(landscapeImage,
+                                                      Matrix.Prewitt3x3Horizontal,
                                                       Matrix.Prewitt3x3Vertical);
 
             Assert.AreEqual("2171731976721719861511911514920518480137", ImageFilters.BitmapToHash(bitmap));
@@ -53,8 +53,8 @@ namespace TestFilterEdgeDetection
         [TestMethod]
         public void TestKirsch()
         {
-            Bitmap bitmap = ExtBitmap.DoubleMatrixFilter(landscapeImage, 
-                                                      Matrix.Kirsch3x3Horizontal, 
+            Bitmap bitmap = ExtBitmap.DoubleMatrixFilter(landscapeImage,
+                                                      Matrix.Kirsch3x3Horizontal,
                                                       Matrix.Kirsch3x3Vertical);
 
             Assert.AreEqual("1631571221215256831351544719033149197195219", ImageFilters.BitmapToHash(bitmap));

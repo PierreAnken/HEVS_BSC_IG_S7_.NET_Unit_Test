@@ -1,10 +1,10 @@
-﻿using System;
+﻿using BLL;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.InteropServices;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BLL;
 
 namespace TestFilterEdgeDetection
 {
@@ -18,7 +18,7 @@ namespace TestFilterEdgeDetection
         [TestMethod]
         public void TestGetColorFromBuffer()
         {
-            BitmapData bitmapData = landscapeImage.LockBits(new Rectangle(0, 0, landscapeImage.Width, landscapeImage.Height), 
+            BitmapData bitmapData = landscapeImage.LockBits(new Rectangle(0, 0, landscapeImage.Width, landscapeImage.Height),
                                                             ImageLockMode.ReadWrite,
                                                             landscapeImage.PixelFormat);
 
@@ -33,7 +33,7 @@ namespace TestFilterEdgeDetection
         [TestMethod]
         public void TestSetPixel()
         {
-            BitmapData bitmapData = landscapeImage.LockBits(new Rectangle(0, 0, landscapeImage.Width, landscapeImage.Height), 
+            BitmapData bitmapData = landscapeImage.LockBits(new Rectangle(0, 0, landscapeImage.Width, landscapeImage.Height),
                                                             ImageLockMode.ReadWrite,
                                                             landscapeImage.PixelFormat);
 
