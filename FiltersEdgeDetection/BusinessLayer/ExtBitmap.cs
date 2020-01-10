@@ -10,15 +10,16 @@ namespace BLL
     {
         public static Bitmap AdaptToSquareCanvas(this Bitmap sourceBitmap, int canvasWidthLenght)
         {
-            if (sourceBitmap == null)
-                return null;
+            Bitmap bitmapResult = null;
+
+            if (sourceBitmap != null) { 
 
             int maxSide = sourceBitmap.Width > sourceBitmap.Height ?
                           sourceBitmap.Width : sourceBitmap.Height;
 
             float ratio = maxSide / (float)canvasWidthLenght;
 
-            Bitmap bitmapResult = (sourceBitmap.Width > sourceBitmap.Height ?
+            bitmapResult = (sourceBitmap.Width > sourceBitmap.Height ?
                                     new Bitmap(canvasWidthLenght, (int)(sourceBitmap.Height / ratio))
                                     : new Bitmap((int)(sourceBitmap.Width / ratio), canvasWidthLenght));
 
@@ -35,6 +36,7 @@ namespace BLL
                                             sourceBitmap.Width, sourceBitmap.Height),
                                             GraphicsUnit.Pixel);
                 graphicsResult.Flush();
+            }
             }
 
             return bitmapResult;
